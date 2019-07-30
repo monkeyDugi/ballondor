@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	* programID : myPatternRegi.xml
+	* 내용      : 등록 페이지 쿼리
+ -->
+
+<mapper namespace="com.duk.ballondor.regi.regiMapper">
+	
+	<!-- popUp select -->  
+	<select id="getWorkList" parameterType="com.duk.ballondor.regi.vo.WorkListVo" resultType="com.duk.ballondor.regi.dto.WorkListDto">
+		SELECT WORK    			    
+		  FROM BALLONDOR.WORK_LIST
+		 WHERE WORK LIKE CONCAT('%', #{ work }, '%')  
+		   AND USER_ID = #{ user_id }		
+         ORDER BY WORK
+                , REGI_DATE  
+	</select>
+		
+	<!-- popUp register -->  
+	<insert id="insertPopWorkRegi" parameterType="com.duk.ballondor.regi.vo.WorkListVo">
+		INSERT INTO BALLONDOR.WORK_LIST
+		(
+		    USER_ID    
+		,   WORK   
+		,	REGI_DATE     
+		) 	
+			SELECT #{ user_id }
+			     , #{ work }
+			     , NOW() 
+			  FROM DUAL	
+			 WHERE NOT EXISTS (
+								  SELECT 1
+								    FROM BALLONDOR.WORK_LIST
+								   WHERE WORK    = #{ work }
+								     AND USER_ID = #{ user_id }
+							  )						  	 		 
+	</insert>	
+	
+	<!-- register -->  
+	<insert id="insertWorkRegi" parameterType="java.util.List">
+		INSERT INTO BALLONDOR.WORK_LIST_MAIN
+		(
+		    USER_ID    
+		,   WORK   
+		,	CONTENT
+		,	REGI_DATE 		
+		)
+		VALUES
+		<foreach item="item" index="index" collection="list" separator=",">
+			(
+				#{ item.user_id }
+			,	#{ item.work }	
+			,	#{ item.content }
+			,	#{ item.regiDate }
+			)
+		</foreach>
+	</insert>		
+</mapper>
