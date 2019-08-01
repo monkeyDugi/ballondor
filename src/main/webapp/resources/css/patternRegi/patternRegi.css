@@ -1,5 +1,5 @@
 /*
- * programID : myPatternRegi.css
+ * programID : patternRegiView.css
  * 내용      : 등록 페이지 css
  * */
 
@@ -7,14 +7,14 @@
 
 .topBar {
 	background:#7561F9;
-	width:100%;
+	width:98.4%;
 	height:100px;
 	padding-left: 30px;
 	padding-top: 10px;    
 }
 
 .topLabel {
-    font-family: 'Oswald', sans-serif;
+    font-family: serif;
     font-size: 35px;	
     color: white;
 }

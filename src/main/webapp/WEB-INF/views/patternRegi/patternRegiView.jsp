@@ -1,11 +1,11 @@
 <!-- 
-	* programID : myPatternRegi.jsp
+	* programID : patternRegi.jsp
 	* 내용      : 등록 페이지 화면 
  -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>        
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,11 +15,11 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/resources/css/myPatternRegi.css">  
-<script src="<c:url value="/resources/js/common.js" />"></script> 
-<script src="<c:url value="/resources/js/myPatternRegi/myPatternRegi.js" />"></script> 
+<link rel="stylesheet" href="/resources/css/patternRegi/patternRegi.css">  
+<script src="<c:url value="/resources/js/com/common.js" />"></script> 
+<script src="<c:url value="/resources/js/patternRegi/patternRegi.js" />"></script> 
 
-<title>나의패턴 등록</title>
+<title>패턴 등록</title>
 </head>
 <body>
 <div class="topBar">

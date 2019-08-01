@@ -1,0 +1,38 @@
+/*
+ *  programID : patternSearch.css
+ *  내용      : 등록된 패턴 그래프로 표시 및 목록 조회 
+ */
+ 
+@CHARSET "UTF-8";
+
+.topBar {
+	background:#7561F9;
+	width:98.4%;
+	height:100px;
+	padding-left: 30px;
+	padding-top: 10px;  
+	margin-top: 0px;
+	margin-bottom: 100px;	  
+}
+
+.topLabel {
+    font-family: serif;
+    font-size: 35px;	
+    color: white;
+}
+
+.char {
+	
+	width: 1000px;
+} 
+
+.gpTopLabel {
+	margin-left: 50px;
+	margin-bottom: 20px;
+}
+
+.gpTopLabel label{
+    font-family: serif;
+    font-size: 35px;	
+    color: red;
+}

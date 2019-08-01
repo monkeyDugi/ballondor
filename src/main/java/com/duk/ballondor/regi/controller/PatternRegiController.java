@@ -34,9 +34,10 @@ public class PatternRegiController {
 	private PatternRegiService patternRegiService;
 	
 	@RequestMapping(value="/patternRegiView.do")
-	public String mainRegi(HttpServletRequest request, HttpServletResponse response) throws Exception {
-				return "myPatternRegi/myPatternRegi";		
+	public String register(HttpServletRequest request, HttpServletResponse response) throws Exception {
+				return "patternRegi/patternRegiView";		
 	}	
+	
 	/* popUp select */
 	@RequestMapping(value="/getPopWorkList.do")
 	@ResponseBody

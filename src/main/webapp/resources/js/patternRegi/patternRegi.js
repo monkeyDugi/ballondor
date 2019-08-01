@@ -1,5 +1,5 @@
 /*
- * programID : myPatternRegi.js
+ * programID : patternRegiView.js
  * 내용      : 등록 페이지 js
  * */
 
