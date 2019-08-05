@@ -76,7 +76,7 @@ label {
 	/*background: aqua;*/
 }
 
-#datepicker {
+.datepicker {
     border: 1px #DADADA solid;
     padding: 5px 10px;
     border-radius: 5px;    
@@ -86,7 +86,7 @@ label {
     width: 80px;
 }
 
-#datepicker:focus {
+.datepicker:focus {
     border: 1px #7561F9 solid;
     box-shadow: 1px 1px 5px 1px #7561F9;    
 }
@@ -108,9 +108,9 @@ label {
 }
 
 .rowBtn {
-    color: #444444;
-    background: #F3F3F3;
-    border: 1px #DADADA solid;
+    color: #ffffff;
+    background: #7561f9b8;
+    border: 1px #7561f94f solid;
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: bold;
@@ -119,10 +119,7 @@ label {
 }
 
 .rowBtn:hover {
-    border: 1px #7561F9 solid;
-    box-shadow: 1px 1px 5px 1px #7561F9;
-    color: #333333;
-    background: #F7F7F7;
+	box-shadow: 1px 1px 5px 1px #989292;
 }
 
 .rowBtn:active {
@@ -130,9 +127,9 @@ label {
 }
 
 .basicBtn {
-    color: #444444;
-    background: #F3F3F3;
-    border: 1px #DADADA solid;
+    color: #ffffff;
+    background: #7561f9b8;
+    border: 1px #7561f94f solid;
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: bold;
@@ -141,10 +138,7 @@ label {
 }
 
 .basicBtn:hover {
-    border: 1px #7561F9 solid;
-    box-shadow: 1px 1px 5px 1px #7561F9;
-    color: #333333;
-    background: #F7F7F7;
+	box-shadow: 1px 1px 5px 1px #989292;
 }
 
 .basicBtn:active {

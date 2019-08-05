@@ -64,7 +64,7 @@
 	<div class="header">			
 		<div class="date">
 			<label>기간 : </label>
-			<input type="text" id="datepicker" readonly="readonly"/>						
+			<input type="text" id="datepicker1" class="datepicker" readonly="readonly"/>						
 		</div>		
 	
 		<div class="workListWrap">

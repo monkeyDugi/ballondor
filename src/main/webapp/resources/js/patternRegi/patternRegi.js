@@ -44,7 +44,7 @@ $(function(){
 				workListVo.user_id = 'qudejr13';
 				workListVo.work    = $("input[name='doWork']").eq(index).val();
 				workListVo.content = $("textarea[name='doContent']").eq(index).val();
-				workListVo.regiDate = $('#datepicker').val().split('-').join('');
+				workListVo.regiDate = $('#datepicker1').val().split('-').join('');
 				
 				list.push(workListVo);
 			}

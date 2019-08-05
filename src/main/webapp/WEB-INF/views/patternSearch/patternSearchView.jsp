@@ -29,9 +29,65 @@
 	</label>
 </div>
 
-<div class="char">
-    <canvas id="myChart"></canvas>
+<!-- 달력 -->
+<div class="date">
+	<label>기간 : </label>
+	<input type="text" id="datepicker1" class="datepicker" readonly="readonly"/> ~						
+	<input type="text" id="datepicker2" class="datepicker" readonly="readonly"/>	
+	<!-- 의문 float: right --> 
+	<div class="searchBtnWrap">
+		<button id="searchBtn" class="basicBtn">조회</button>	
+	</div>						
 </div>
 
+	
+
+<!-- 그래프 -->
+<div class="chart">
+    <canvas id="myChart"></canvas>     
+</div>
+
+<!-- 목록 -->
+<div class="wrap">	
+
+<!-- 	<div class="middle">
+		<div class="content">	
+			<div class="doWorkWrap">
+				<label name="doWork" class="doWork">축구</label>
+			</div>	
+			<div class="doDtlViWrap">
+				<input type="button" name="doDtlVi" class="basicBtn" value="상세보기"/>
+			</div>	
+			<div class="doDateWrap">
+				<label name="doDate" class="doDate">2019-08-01</label>
+			</div>				
+		</div>
+		
+		<div class="content">	
+			<div class="doWorkWrap">
+				<label name="doWork" class="doWork">러닝</label>
+			</div>	
+			<div class="doDtlViWrap">
+				<input type="button" name="doDtlVi" class="basicBtn" value="상세보기"/>
+			</div>	
+			<div class="doDateWrap">
+				<label name="doDate" class="doDate">2019-08-01</label>
+			</div>				
+		</div>
+
+		<div class="content">	
+			<div class="doWorkWrap">
+				<label name="doWork" class="doWork">축구</label>
+			</div>	
+			<div class="doDtlViWrap">
+				<input type="button" name="doDtlVi" class="basicBtn" value="상세보기"/>
+			</div>	
+			<div class="doDateWrap">
+				<label name="doDate" class="doDate">2019-08-02</label>
+			</div>				
+		</div>											
+	</div>	 -->
+		
+</div>
 </body>
 </html>

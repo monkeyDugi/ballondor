@@ -20,19 +20,112 @@
     font-size: 35px;	
     color: white;
 }
+ 
+.date {
+	width: 350px;;
+	height: 30px;
+	margin-left: 50px;		
+	/* background: aqua; */	
+}
 
-.char {
+.datepicker {
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 5px;    
+    font-size: 9pt;
+    outline: none;
+    text-align: center;
+    width: 80px;
+}
+
+.datepicker:focus {
+    border: 1px #7561F9 solid;
+    box-shadow: 1px 1px 5px 1px #7561F9;    
+} 
+ 
+.chart {
 	
 	width: 1000px;
-} 
+	float: left;
+	margin-top: 25px;
+	/* background: blue; */
+}
 
-.gpTopLabel {
+.wrap {
+	
+	float: left;
+	margin-left: 100px;
+	margin-top: 80px;	
+}
+
+.content {
+	
+	float: left;
 	margin-left: 50px;
+	background: #dadada00; 
+	padding: 10px;	
+	width: 150px;
+	text-align: center;
+    border: 1px #dadada00 solid;
+    box-shadow: 10px 10px 10px 5px #989292;
+    border-radius : 5px;
+    margin-bottom: 70px;
+}
+
+.doWorkWrap {
+	
 	margin-bottom: 20px;
 }
 
-.gpTopLabel label{
-    font-family: serif;
-    font-size: 35px;	
-    color: red;
+.doWork {
+
+	font-family:fantasy;
+	font-weight: bold;
+	font-size:15px;
+	color:#0e0e0ebd;	
 }
+
+.doDtlViWrap {
+	
+	margin-bottom: 20px;
+}
+
+.doDateWrap {
+		
+	float: right;	
+}
+
+.doDate {
+	
+	font-family:fantasy;
+	font-weight: 300;
+	font-size:12px;
+	color:#0e0e0ebd;	
+}
+
+.basicBtn {
+    color: #ffffff;
+    background: #7561f9b8;
+    border: 1px #7561f94f solid;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+}
+
+.basicBtn:hover {
+    box-shadow: 1px 1px 5px 1px #989292;
+}
+
+.basicBtn:active {
+    box-shadow: 0 0 0 0 #DADADA;       
+}
+
+/* ÀÇ¹® float: right */
+.searchBtnWrap {	
+	float: right; 
+}
+
+
+ 

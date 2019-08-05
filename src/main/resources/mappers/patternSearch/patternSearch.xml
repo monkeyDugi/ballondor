@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	* programID : patternSearch.xml
+	* 내용      : 조회 페이지 쿼리
+ -->
+
+<mapper namespace="com.duk.ballondor.search.searchMapper">
+	
+	<!-- 조회 -->  
+	<select id="getWorkList" parameterType="com.duk.ballondor.search.vo.SearchWorkListVo" resultType="com.duk.ballondor.search.dto.SearchWorkListDto">
+		SELECT WORK 
+		     , REGI_DATE   			    
+		  FROM BALLONDOR.WORK_LIST_MAIN
+		 WHERE USER_ID = #{ user_id }		
+		   AND REGI_DATE BETWEEN #{ from_date } AND #{ to_date }
+         ORDER BY REGI_DATE DESC
+                , WORK
+	</select>
+		
+	<!-- Bar 조회 -->  
+	<select id="getBarWorkList" parameterType="com.duk.ballondor.search.vo.SearchWorkListVo" resultType="com.duk.ballondor.search.dto.SearchWorkListDto">
+		SELECT COUNT(WORK) AS RANKING 
+		     , WORK   			    
+		  FROM BALLONDOR.WORK_LIST_MAIN
+		 WHERE USER_ID = #{ user_id }		
+		   AND REGI_DATE BETWEEN #{ from_date } AND #{ to_date }
+		 GROUP BY WORK
+         ORDER BY REGI_DATE DESC
+                , WORK
+	</select>	
+</mapper>
