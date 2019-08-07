@@ -31,9 +31,16 @@ public class PatternSearchController {
 	@Autowired
 	private PatternSearchService patternSearchService;
 	
+	/* 조회 화면*/
 	@RequestMapping(value="/patternSearchView.do")
 	public String search(HttpServletRequest request, HttpServletResponse response) throws Exception {
-				return "patternSearch/patternSearchView";		
+			return "patternSearch/patternSearchView";		
+	}
+	
+	/* 상세보기 */
+	@RequestMapping(value="/patternSearchDtlView.do")
+	public String searchDtl(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return "patternSearch/patternSearchDtlView";		
 	}		
 	
 	/* 조회 */

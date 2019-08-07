@@ -1,0 +1,137 @@
+/*
+ * programID : patternSearchDtl.css
+ * 내용      : 상세보기 페이지 css
+ * */
+
+@CHARSET "UTF-8";
+
+.topBar {
+	background:#7561F9;
+	width:98.4%;
+	height:100px;
+	padding-left: 30px;
+	padding-top: 10px;    
+}
+
+.topLabel {
+    font-family: serif;
+    font-size: 35px;	
+    color: white;
+}
+
+textarea {
+	resize: none;
+	width: 625px;
+	height: 110px;	
+}
+
+label {
+	font-family:monospace;
+	font-weight: 560;
+	font-size:15px;
+	color:#0e0e0ebd
+
+}
+
+.wrap {
+	width: 900px;	
+	background: #ffffff;	
+	padding-top:20px;
+	padding-bottom:20px;
+    border: 1px #7561F9 solid;
+    box-shadow: 1px 1px 10px 1px #7561F9; 
+    position:absolute;
+    left: 50%;
+    top: 60%;
+    margin-left: -450px;
+    margin-top: -350px;
+    margin-bottom: 50px;
+}
+
+.header {
+	width: 650px;
+	height: 20px;
+	margin-left: 100px;	
+	margin-bottom: 10px;
+	/*background: yellow;*/
+}
+
+.workListWrap {
+	width: 680px;
+	height: 30px;
+	margin-left: 50px;	
+	margin-bottom: 20px;
+	/*background: fuchsia;*/
+}
+
+.basicBtn {
+    color: #ffffff;
+    background: #7561f9b8;
+    border: 1px #7561f94f solid;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+}
+
+.basicBtn:hover {
+	box-shadow: 1px 1px 5px 1px #989292;
+}
+
+.basicBtn:active {
+    box-shadow: 0 0 0 0 #DADADA;       
+}
+
+.middle {
+	width: 750px;
+	/*background: black;*/
+	margin-left: 50px;
+	margin-bottom: 10px;		
+}
+
+.content {
+	width: 680px;;	
+	margin-left: 40px;	
+	margin-bottom: 20px;
+	/*background: red;	*/
+	border: 1px #DADADA solid;
+	border-radius: 5px;
+	padding-top: 10px;	
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+.doWorkWrap {		
+	margin-bottom: 20px;
+}
+
+.doContent {
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 5px;    
+    font-size: 9pt;
+    outline: none;	
+}
+
+.doContent:focus {
+    border: 1px #7561F9 solid;
+    box-shadow: 1px 1px 5px 1px #7561F9;  
+}
+
+.footer {
+	width: 750px;
+	height: 30px;
+	margin-left: 50px;	
+	margin-bottom: 10px;
+	/*background: orange;	*/
+}
+
+.upt {
+	width: 680px;
+	margin-left: 50px;	
+	margin-bottom: 20px;
+	/*background: maroon;	*/
+	text-align: right;
+}
+

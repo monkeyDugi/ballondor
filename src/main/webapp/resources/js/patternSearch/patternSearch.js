@@ -54,42 +54,64 @@ $(function(){
     	,	error: function(xhr, status, error) { alert('실패'); }
     	});	    	
 	};
-	
-	function listFunc(obj) {		
 
-		/* 요기 뿌리는 방법 고민하기 */
+	/* 목록 조회 
+	 * 1 row에 3col씩 보여줌.
+	 * */
+	function listFunc(obj) {		
+		
 		var html = '';
+		/* 초기화 */
+		$('.wrap').empty();
 		
 		if(obj.length > 0) {
 						
-			for(i=0; i<obj.length; i++) {
+			for(i=1; i<=obj.length; i++) {
 				
-					html = 		'<div class="content">' 	
-							+			'<div class="doWorkWrap">'
-							+			'<label name="doWork" class="doWork">' + obj[i].work + '</label>'
-							+		'</div>'	
-							+		'<div class="doDtlViWrap">'
-							+			'<input type="button" name="doDtlVi" class="basicBtn" value="상세보기"/>'
-							+		'</div>'	
-							+		'<div class="doDateWrap">'
-							+			'<label name="doDate" class="doDate">' + obj[i].regi_date + '</label>'
-							+		'</div>'				
-							+	'</div>';
+				if(i%3 == 1) {
+					
+					html = 	'<div class="middle">';
+				}
 				
+				html += '<div class="content">'; 	
+				html +=		'<div class="doWorkWrap">';
+				html +=			'<label name="doWork" class="doWork">' + obj[i-1].work + '</label>';
+				html +=		'</div>';	
+				html +=		'<div class="doDtlViWrap">';
+				html +=			'<input type="button" name="doDtlVi" class="basicBtn" value="준비중"/>';
+				html +=		'</div>';	
+				html +=		'<div class="doDateWrap">';
+				html +=			'<label name="doDate" class="doDate">' + obj[i-1].regi_date + '</label>';
+				html +=		'</div>';				
+				html +=	'</div>';
+				
+				
+				if(i%3 == 0 || i == obj.length) {
+					
+/*					alert(obj.length);
+					html = 	'<div class="middle">' + html + '</div>';
+					$('.wrap').append(html);
+					html = '';*/
+					
+					html = 	html + '</div>';
+					$('.wrap').append(html);
+					html = '';
+				}		
 			}
 			
-			html = 		'<div class="middle">' + html + '</div>'
+			//console.log(html);
 			
-			console.log(html);
-			
-			$('.wrap').append(html);
 		}	
 	}
 	
+	/* 의문 : 그래프 데이터 초기화가 안됨.
+	       - 마우스 오버 시 이전 데이털 변경되는 현상*/
 	function chartFunc(obj) {		
 		/************************************** 차트 ***********************************************/
 		// 우선 컨텍스트를 가져옵니다. 
 		var ctx = document.getElementById("myChart").getContext('2d');
+		// 초기화
+		ctx.beginPath();
 		
 		var allData = obj;
 		

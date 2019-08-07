@@ -11,7 +11,8 @@
 	
 	<!-- 조회 -->  
 	<select id="getWorkList" parameterType="com.duk.ballondor.search.vo.SearchWorkListVo" resultType="com.duk.ballondor.search.dto.SearchWorkListDto">
-		SELECT WORK 
+		SELECT IDX
+		     , WORK 
 		     , REGI_DATE   			    
 		  FROM BALLONDOR.WORK_LIST_MAIN
 		 WHERE USER_ID = #{ user_id }		

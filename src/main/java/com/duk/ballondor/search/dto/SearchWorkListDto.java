@@ -2,9 +2,17 @@ package com.duk.ballondor.search.dto;
 
 public class SearchWorkListDto {
 
+	private int idx;
 	private String work; 		
 	private String regi_date;
 	private int ranking;			// 그래프 카운트
+	
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
 	
 	public String getWork() {
 		return work;
