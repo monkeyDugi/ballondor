@@ -22,7 +22,7 @@
 <title>패턴 등록</title>
 </head>
 <body>
-<div class="topBar">
+<div class="topBar" id="mainMove">
 	<label class="topLabel">
 		MyPattern
 	</label>

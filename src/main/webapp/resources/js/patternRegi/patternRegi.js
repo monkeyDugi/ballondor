@@ -101,6 +101,12 @@ $(function(){
 				
 	}
 
+	/* 메인 이동 */
+	$.fn.mainMove = function() {
+		
+		location.href = "/patternMain/patternMainView.do";
+	}
+	
 //====================== popUp ======================//
 	$.fn.workListSearch = function() {
 		var href = $('#layer2');			
@@ -271,6 +277,12 @@ $(function(){
 			$.fn.delRowFunc();
 		}
 	});
+	
+	/* 메인 이동 */
+	$('#mainMove').click(function() {
+		
+		$.fn.mainMove();
+	});
 //========================== popUp ===========================//	
 	
 	/*popUp Open*/
@@ -290,7 +302,7 @@ $(function(){
 		
 		$.fn.popWorkRegi();
 	});			
-	
+
 	/*popUp tr 더블클릭 시 메인으로 값 전달.*/
 	/*일단 보류*/
 /*	$('#popTable table tr').dblclick(function(){			

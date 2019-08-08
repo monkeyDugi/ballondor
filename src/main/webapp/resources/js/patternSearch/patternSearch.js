@@ -177,11 +177,24 @@ $(function(){
 		});
 		/************************************** 차트 END ***********************************************/
 	}
+	
+	/* 메인 이동 */
+	$.fn.mainMove = function() {
+		
+		location.href = "/patternMain/patternMainView.do";
+	}
+	
 	/* 조회 */
 	$('#searchBtn').click(function() {
 		
 		$.fn.listSearch();
 	});
+	
+	/* 메인 이동 */
+	$('#mainMove').click(function() {
+		
+		$.fn.mainMove();
+	});	
 });	
 
 

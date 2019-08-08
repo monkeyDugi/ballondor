@@ -16,13 +16,14 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/resources/css/patternMain/patternMain.css">  
-<script src="<c:url value="/resources/js/patternMain/patternMain.js" />"></script> 
+<link rel="stylesheet" href="/resources/css/patternSearch/patternSearch.css">  
+<script src="<c:url value="/resources/js/patternSearch/patternSearch.js" />"></script>
+<script src="<c:url value="/resources/js/com/common.js" />"></script>  
 
-<title>메인</title>
+<title>조회</title>
 </head>
 <body>
-<div class="topBar">
+<div class="topBar" id="mainMove">
 	<label class="topLabel">
 		MyPattern
 	</label>

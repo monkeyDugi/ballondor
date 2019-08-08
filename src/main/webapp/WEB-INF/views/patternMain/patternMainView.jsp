@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/resources/css/patternMain/patternMain.css">  
 <script src="<c:url value="/resources/js/patternMain/patternMain.js" />"></script> 
 
-<title>상세 보기</title>
+<title>메인</title>
 </head>
 <body>
 <div class="topBar">

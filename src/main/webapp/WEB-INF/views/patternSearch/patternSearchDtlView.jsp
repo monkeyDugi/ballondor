@@ -21,7 +21,7 @@
 <title>상세 보기</title>
 </head>
 <body>
-<div class="topBar">
+<div class="topBar" id="mainMove">
 	<label class="topLabel">
 		MyPattern
 	</label>

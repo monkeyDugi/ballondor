@@ -7,35 +7,18 @@
 /* 나중에 session 생각 */
 $(function(){
 	
-	/*페이지 이동은 ajax로 하는게 아니다. ajax는 데이터 송수신*/
-	
-	
-/*	$.fn.regiPage = function() {
-		    	
-    	$.ajax({
-    		
-    		type: "GET"
-    	,	url: "/patternSearch/selectBarWorkSearch.do"	
-    	,	dataType: "JSON"    	    	
-    	,	data: data	
-    	,	contentType: "application/json"
-    	,	success: function(obj) { }
-    	,	error: function(xhr, status, error) { alert('실패'); }
-    	});	    	
+	/* 등록 페이지 이동 */
+	$.fn.regiPage = function() {
+		    
+    	location.href = "/patternRegi/patternRegiView.do";	
 	};
 	
+	/* 조회 페이지 이동 */
 	$.fn.searchPage = function() {
 		
-		$.ajax({
-			
-			type: "GET"
-		,	url: "/patternSearch/patternSearchView.do"						    		
-		,	contentType: "application/json"
-		,	success: function() { }
-		,	error: function(xhr, status, error) { alert('실패'); }
-		});	    	
+		location.href = "/patternSearch/patternSearchView.do";						    		
 	};
-*/
+
 /**************************************** 이벤트 **************************************************/
 	/* 등록 페이지 이동 */
 	$('#regiBtn').click(function() {
