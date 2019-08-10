@@ -14,10 +14,12 @@ public class MemberDaoImpl implements MemberDao {
 	@Inject
 	SqlSession sqlSession;
 	
+	private static final String NAMESPACE = "com.duk.ballondor.member.memberMapper.";
+	
 	// 01_01. 회원 로그인 체크
 	@Override
 	public boolean loginCheck(MemberVo vo) {
-		String name = sqlSession.selectOne("member.loginCheck", vo);
+		String name = sqlSession.selectOne(NAMESPACE + "loginCheck", vo);
 		return (name == null) ? false : true;
 	}
 
@@ -25,7 +27,7 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public MemberVo viewMember(MemberVo vo) {
 		
-		return sqlSession.selectOne("member.viewMember", vo);
+		return sqlSession.selectOne(NAMESPACE + "viewMember", vo);
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 /*
- * programID : patternMain.css
- * 내용      : 메인 페이지 css
+ * programID : lgoin.css
+ * 내용      : 로기은 페이지 css
  * */
  
 @CHARSET "UTF-8";
@@ -19,16 +19,8 @@
     color: white;
 }
 
-label {
-	font-family:monospace;
-	font-weight: 560;
-	font-size:15px;
-	color:#0e0e0ebd
-
-}
-
 .wrap {
-	width: 900px;	
+	width: 450px;	
 	background: #ffffff;	
 	padding-top:20px;
 	padding-bottom:20px;
@@ -37,12 +29,13 @@ label {
     position:absolute;
     left: 50%;
     top: 60%;
-    margin-left: -450px;
-    margin-top: -350px;
+    margin-left: -200px;
+    margin-top: -250px;
     margin-bottom: 50px;
 }
 
 .header {	
+	
 	margin-top: 20px;
 	margin-bottom: 20px;
 	/* background: maroon;	 */
@@ -70,19 +63,6 @@ label {
     box-shadow: 0 0 0 0 #DADADA;       
 }
 
-.disbasicBtn {
-    color: #DADADA;
-    background: #dadada52;
-    border: 1px #dadada52 solid;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 12pt;
-    outline: none;
-    width: 200px;
-    height: 50px;
-}
-
 .signBtn {
     color: #ffffff;
     background: #7561f9b8;
@@ -105,44 +85,73 @@ label {
 }
 
 .middle {
-	width: 750px;
-	/*background: black;*/
-	margin-left: 50px;
-	margin-bottom: 10px;		
+	width: 365px;
+	margin-left: 50px;	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	/*background: beige;	*/	
 }
 
 .content {
-	width: 680px;;	
-	margin-left: 40px;	
-	margin-bottom: 20px;
-	/*background: red;	*/
-	/*border: 1px #DADADA solid;*/
-	border-radius: 5px;
-	padding-top: 10px;	
-	padding-bottom: 10px;
-	padding-left: 10px;
+	width: 300px;
+	margin-left: 35px;	
+	margin-bottom: 10px;
+	/*background: maroon;	*/
+	text-align: center;	
 }
 
-.descriptLabel {
-    font-family: serif;
-    font-size: 35px;	
-    color: #666666;
-    text-align:center
+input {
+   	width: 200px;
+   	height: 23px;
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 5px;    
+    font-size: 10pt;
+    outline: none;
+    margin-top: 20px;
+}
+
+input:focus {
+    border: 1px #7561F9 solid;
+    box-shadow: 1px 1px 5px 1px #7561F9;    
+}
+
+.msg{
+	width: 300px;
+	margin-left: 35px;	
+	margin-bottom: 20px;
+	/*background: maroon;	*/
+	text-align: center;		
+}
+
+.fail {
+	width:350px;
+	color:red;
+	/* background:beige; */
+	font-size: 7pt;
+}
+
+.nomal {
+	width:350px;
+	color:black;
+	/* background:beige; */
+	font-size: 7pt;
 }
 
 .footer {
-	width: 750px;
-	height: 30px;
+	width: 365px;
+	height: 50px;
 	margin-left: 50px;	
-	margin-bottom: 10px;
+	margin-bottom: 40px;
 	/*background: orange;	*/
 }
-
-.regiAndSearchBtn {
-	width: 680px;
-	margin-left: 50px;	
+.loginBtnWrap {
+	width: 300px;
+	margin-left: 35px;	
 	margin-bottom: 20px;
 	/*background: maroon;	*/
 	text-align: center;
 }
+
+
 

@@ -5,6 +5,9 @@
 
 $(function(){
 	
+	var sessionUserId = $("#userId").val();
+	/*alert(sessionUserId);*/
+	
 	var rowCnt = 1;
 	console.log(rowCnt);
 	
@@ -22,7 +25,7 @@ $(function(){
 		
 		var flag = true;
 
-		var list = [];
+		var list = [];	
     	
 		//console.log('regiFunc');
 
@@ -41,7 +44,7 @@ $(function(){
 				
 				var workListVo = {};
 				
-				workListVo.user_id = 'qudejr13';
+				workListVo.user_id = sessionUserId;
 				workListVo.work    = $("input[name='doWork']").eq(index).val();
 				workListVo.content = $("textarea[name='doContent']").eq(index).val();
 				workListVo.regiDate = $('#datepicker1').val().split('-').join('');
@@ -156,7 +159,7 @@ $(function(){
 
     $.fn.popWorkList = function() {
     	
-    	var user_id  = 'qudejr13';
+    	var user_id  = sessionUserId;
     	var work = $('#popSearch').val().trim();	
 
     	
@@ -207,7 +210,7 @@ $(function(){
     
     $.fn.popWorkRegi = function() {
     	
-    	var user_id  = 'qudejr13';
+    	var user_id  = sessionUserId;
     	var work = $('#popSearch').val().trim();	    	
     	
     	if(work.length == 0) {
@@ -251,7 +254,11 @@ $(function(){
     	}
     }
     
-        
+	$.fn.signOutFunc = function() {
+		
+		location.href = "/member/logout.do";						    		
+	};       
+	
 /********************************************** 이벤트 **********************************************/
 	
 	/*등록*/	
@@ -283,6 +290,12 @@ $(function(){
 		
 		$.fn.mainMove();
 	});
+	
+	/* 로그아웃 */
+	$('#signOutBtn').click(function() {
+		
+		$.fn.signOutFunc();
+	});	
 //========================== popUp ===========================//	
 	
 	/*popUp Open*/

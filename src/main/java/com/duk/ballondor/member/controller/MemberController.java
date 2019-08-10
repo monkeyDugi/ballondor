@@ -35,10 +35,17 @@ public class MemberController {
 	}
 	
 	// 02. 로그인 처리
+	// - 아이디와 비밀번호가 DB에 유효하면 TRUE를 리턴 받아 로그인 성공.
+	// - 서비스에서 성공 시 세션에 아이디와 이름 등록.
 	@RequestMapping(value="/loginCheck.do")
 	public ModelAndView loginCheck(@ModelAttribute MemberVo vo, HttpSession session) {
 		
+		logger.debug("getUserId: " + vo.getUserId());
+		logger.debug("getUserPw: " + vo.getUserName());
+		
 		boolean result = memberService.loginCheck(vo, session);
+		
+		logger.debug("로그인 결과 : " + String.valueOf(result));
 		
 		ModelAndView mav = new ModelAndView();
 		
@@ -54,7 +61,7 @@ public class MemberController {
 			
 			// 로그인 페이지로 이동
 			mav.setViewName("member/login");
-			mav.addObject("msg", "fialure");
+			mav.addObject("msg", "fialure");			
 		}
 		
 		return mav;
@@ -68,9 +75,9 @@ public class MemberController {
 		
 		ModelAndView mav = new ModelAndView();
 		
-		// 로그인 페이지로 이동
-		mav.setViewName("member/login");
-		mav.addObject("msg", "logout");
+		// 메인 페이지로 이동
+		mav.setViewName("patternMain/patternMainView");
+		/*mav.addObject("msg", "logout");*/
 		
 		return mav;
 	}

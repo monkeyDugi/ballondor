@@ -22,6 +22,9 @@
 <title>패턴 등록</title>
 </head>
 <body>
+<!-- 로그인 정보(userId) -->
+<input id="userId" type="hidden" value="${sessionScope.userId}"/>
+
 <div class="topBar" id="mainMove">
 	<label class="topLabel">
 		MyPattern
@@ -59,6 +62,11 @@
     </div>
 </div>
 <!-- popUp End-->
+
+<div class="loginHeader">
+	<label>${sessionScope.userName}님 환영합니다.</label> 
+	<button id="signOutBtn" class="signBtn">로그아웃</button>  
+</div>
 
 <div class="wrap">	
 	<div class="header">			

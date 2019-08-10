@@ -23,6 +23,9 @@
 <title>조회</title>
 </head>
 <body>
+<!-- 로그인 정보(userId) -->
+<input id="userId" type="hidden" value="${sessionScope.userId}"/>
+
 <div class="topBar" id="mainMove">
 	<label class="topLabel">
 		MyPattern
@@ -43,6 +46,11 @@
 <!-- 그래프 -->
 <div class="chart">
     <canvas id="myChart"></canvas>     
+</div>
+
+<div class="loginHeader">
+	<label>${sessionScope.userName}님 환영합니다.</label> 
+	<button id="signOutBtn" class="signBtn">로그아웃</button>  
 </div>
 
 <!-- 목록 -->

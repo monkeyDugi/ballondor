@@ -52,6 +52,34 @@
 	/* background: blue; */
 }
 
+.loginHeader {	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	/* background: maroon;	 */
+	text-align: right;
+}
+
+.signBtn {
+    color: #ffffff;
+    background: #7561f9b8;
+    border: 1px #7561f94f solid;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12pt;
+    outline: none;
+    width: 100px;
+    height: 40px
+}
+
+.signBtn:hover {
+	box-shadow: 1px 1px 5px 1px #989292;
+}
+
+.signBtn:active {
+    box-shadow: 0 0 0 0 #DADADA;       
+}
+
 .wrap {
 	
 	float: left;

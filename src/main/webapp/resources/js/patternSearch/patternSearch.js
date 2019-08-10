@@ -5,12 +5,13 @@
 
 $(function(){
 	
+	var sessionUserId = $("#userId").val();
 	// 초기화면 그래프 내용 없게.
 	chartFunc('');
 	
 	$.fn.listSearch = function() {
 		
-		var user_id   = 'qudejr13';
+		var user_id   = sessionUserId;
 		var from_date = $('#datepicker1').val().split('-').join('');
 		var to_date   = $('#datepicker2').val().split('-').join('');
 		
@@ -184,6 +185,12 @@ $(function(){
 		location.href = "/patternMain/patternMainView.do";
 	}
 	
+	/* 로그아웃 */
+	$.fn.signOutFunc = function() {
+		
+		location.href = "/member/logout.do";						    		
+	};	
+	
 	/* 조회 */
 	$('#searchBtn').click(function() {
 		
@@ -194,6 +201,12 @@ $(function(){
 	$('#mainMove').click(function() {
 		
 		$.fn.mainMove();
+	});	
+	
+	/* 로그아웃 */
+	$('#signOutBtn').click(function() {
+		
+		$.fn.signOutFunc();
 	});	
 });	
 

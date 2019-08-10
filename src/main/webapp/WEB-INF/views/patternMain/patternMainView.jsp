@@ -27,29 +27,38 @@
 	</label>
 </div>
 
-<div class="header">			
-	<!-- <button id="signInBtn" class="signBtn">로그인</button> --> 
-	<button id="signOutBtn" class="signBtn">로그아웃</button>  
+<div class="header">				
+	<c:if test="${msg == 'success'}">
+		<label>${sessionScope.userName}님 환영합니다.</label> 
+		<button id="signOutBtn" class="signBtn">로그아웃</button>  
+	</c:if>
+	<c:if test="${msg == null}">		
+		<button id="signInBtn" class="signBtn">로그인</button>  
+	</c:if>
 	<button id="signUpBtn" class="signBtn">회원가입</button> 					
 </div>			
 
 <div class="wrap">	
 	<div class="middle">
-		<div class="content">	
-			<!-- <div class="doWorkWrap"> -->
-				<label class="descriptLabel">
-					<p>내가 무엇을 </p>
-					<p>많이 하는지,</p> 
-					<p>적게 하는지,</p> 
-					<p>궁금하지 않으세요?</p>
-				</label>	
-			<!-- </div> -->
+		<div class="content">				
+			<label class="descriptLabel">
+				<p>내가 무엇을 </p>
+				<p>많이 하는지,</p> 
+				<p>적게 하는지,</p> 
+				<p>궁금하지 않으세요?</p>
+			</label>				
 		</div>									
 	</div>
 	<div class="footer">
-		<div class="regiAndSearchBtn">			
+		<div class="regiAndSearchBtn">		
+		<c:if test="${msg == 'success'}">	
 			<button id="regiBtn" class="basicBtn">등록하기</button> 
-			<button id="searchBtn" class="basicBtn">조회하기</button> 
+			<button id="searchBtn" class="basicBtn">조회하기</button>
+		</c:if> 
+		<c:if test="${msg == null}">	
+			<button id="regiBtn" class="disbasicBtn" disabled="disabled">등록하기</button> 
+			<button id="searchBtn" class="disbasicBtn" disabled="disabled">조회하기</button>
+		</c:if> 
 		</div>
 	</div>			
 </div>
