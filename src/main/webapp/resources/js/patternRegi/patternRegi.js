@@ -13,8 +13,7 @@ $(function(){
 	
 	/* 8자 제한 */
 	$("input[name='doWork']").on('keyup', function() {
-
-		console.log('ddd');
+		
 		if( $(this).val().length > 8 ) {
 
 			$(this).val( $(this).val().substring(0, 8) );

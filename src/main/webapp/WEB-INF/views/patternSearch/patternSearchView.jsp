@@ -32,6 +32,11 @@
 	</label>
 </div>
 
+<div class="loginHeader">
+	<label>${sessionScope.userName}님 환영합니다.</label> 
+	<button id="signOutBtn" class="signBtn">로그아웃</button>  
+</div>
+
 <!-- 달력 -->
 <div class="date">
 	<label>기간 : </label>
@@ -48,10 +53,6 @@
     <canvas id="myChart"></canvas>     
 </div>
 
-<div class="loginHeader">
-	<label>${sessionScope.userName}님 환영합니다.</label> 
-	<button id="signOutBtn" class="signBtn">로그아웃</button>  
-</div>
 
 <!-- 목록 -->
 <div class="wrap"></div>

@@ -13,6 +13,24 @@ $(function(){
     	/*location.href = "/patternRegi/patternRegiView.do";	*/
 	};
 	
+	/* 15자 제한 */
+	$("input[name='userId']").on('keyup', function() {
+		
+		if( $(this).val().length > 15 ) {
+
+			$(this).val( $(this).val().substring(0, 15) );
+		}
+	});	
+	
+	/* 15자 제한 */
+	$("input[name='userPw']").on('keyup', function() {
+		
+		if( $(this).val().length > 15 ) {
+			
+			$(this).val( $(this).val().substring(0, 15) );
+		}
+	});	
+	
 	/* 로그인 */
 	$.fn.loginFunc = function() {
 		
