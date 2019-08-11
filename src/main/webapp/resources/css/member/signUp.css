@@ -3,6 +3,7 @@
  * 내용      : 로기은 페이지 css
  * */
  
+ 
 @CHARSET "UTF-8";
 
 .topBar {
@@ -10,8 +11,8 @@
 	width:98.4%;
 	height:100px;
 	padding-left: 30px;
-	padding-top: 10px;  
-	cursor: pointer;  
+	padding-top: 10px;    
+	cursor: pointer;
 }
 
 .topLabel {
@@ -101,6 +102,27 @@
 	text-align: center;	
 }
 
+.msg{
+	width: 300px;
+	margin-left: 5px;		
+	margin-top:5px;
+	/*background: maroon;	*/
+	text-align: center;		
+}
+
+.fail {	
+	color:red;
+	/* background:beige; */
+	font-size: 7pt;
+
+}
+
+.nomal {	
+	color:black;
+	/* background:beige; */
+	font-size: 7pt;	
+}
+
 input {
    	width: 200px;
    	height: 23px;
@@ -117,28 +139,6 @@ input:focus {
     box-shadow: 1px 1px 5px 1px #7561F9;    
 }
 
-.msg{
-	width: 300px;
-	margin-left: 35px;	
-	margin-bottom: 20px;
-	/*background: maroon;	*/
-	text-align: center;		
-}
-
-.fail {
-	width:350px;
-	color:red;
-	/* background:beige; */
-	font-size: 7pt;
-}
-
-.nomal {
-	width:350px;
-	color:black;
-	/* background:beige; */
-	font-size: 7pt;
-}
-
 .footer {
 	width: 365px;
 	height: 50px;
@@ -146,13 +146,11 @@ input:focus {
 	margin-bottom: 40px;
 	/*background: orange;	*/
 }
-.loginBtnWrap {
+
+.signUpBtnWrap {
 	width: 300px;
 	margin-left: 35px;	
 	margin-bottom: 20px;
 	/*background: maroon;	*/
 	text-align: center;
 }
-
-
-

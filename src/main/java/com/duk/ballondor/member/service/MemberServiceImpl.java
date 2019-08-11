@@ -58,4 +58,26 @@ public class MemberServiceImpl implements MemberService {
 		// 세션 정보 초기화
 		session.invalidate();
 	}
+	
+	// 01_01. 회원가입ID 중복 체크
+	@Override
+	public boolean signUpCheck(MemberVo vo, HttpSession session) {
+		
+		// 아이디 중복이면 false 리턴
+		boolean result = memberDao.signUpCheck(vo);
+		
+		if(result == true) {
+			
+			insertMember(vo);
+		}	
+		
+		return result;
+	}
+	
+	// 01_02. 회원가입 insert
+	@Override
+	public void insertMember(MemberVo vo) {
+		
+		memberDao.insertMember(vo);
+	}	
 }

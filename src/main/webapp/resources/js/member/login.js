@@ -10,7 +10,7 @@ $(function(){
 	/* 회원가입 페이지 이동 */
 	$.fn.signUpFunc = function() {
 		    
-    	/*location.href = "/patternRegi/patternRegiView.do";	*/
+    	location.href = "/member/signUp.do";	
 	};
 	
 	/* 15자 제한 */
@@ -35,7 +35,7 @@ $(function(){
 	$.fn.loginFunc = function() {
 		
 		var userId = $('#userId').val();		
-		var userPw = $('#userPw').val();	
+		var userPw = $('#userPw').val();				
 				
 		if(userId == '' || userPw == '') {
 			
@@ -62,6 +62,11 @@ $(function(){
 		document.form1.submit();
 	};
 
+	/* 메인 이동 */
+	$.fn.mainMove = function() {
+		
+		location.href = "/patternMain/patternMainView.do";
+	}	
 /**************************************** 이벤트 **************************************************/
 	/* 회원가입 페이지 이동 */
 	$('#signUpBtn').click(function() {
@@ -74,6 +79,12 @@ $(function(){
 		
 		$.fn.loginFunc();
 	});
+
+	/* 메인 이동 */
+	$('#mainMove').click(function() {
+		
+		$.fn.mainMove();
+	});		
 });	
 
 

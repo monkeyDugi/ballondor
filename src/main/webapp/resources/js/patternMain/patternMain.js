@@ -32,7 +32,7 @@ $(function(){
 	/* 회원가입 페이지 이동 */
 	$.fn.signUpFunc = function() {
 		
-		location.href = "/member/singUp.do";						    		
+		location.href = "/member/signUp.do";						    		
 	};
 
 /**************************************** 이벤트 **************************************************/

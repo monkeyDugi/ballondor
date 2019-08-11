@@ -19,4 +19,10 @@ public interface MemberService {
 	
 	// 02. 회원 로그아웃
 	public void logout(HttpSession session);
+
+	// 01_01. 회원가입 ID 중복 체크
+	public boolean signUpCheck(MemberVo vo, HttpSession session);
+
+	// 01_02. 회원가입 insert
+	public void insertMember(MemberVo vo);
 }

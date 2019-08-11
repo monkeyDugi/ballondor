@@ -34,8 +34,8 @@
 	</c:if>
 	<c:if test="${msg == null}">		
 		<button id="signInBtn" class="signBtn">로그인</button>  
+		<button id="signUpBtn" class="signBtn">회원가입</button> 					
 	</c:if>
-	<button id="signUpBtn" class="signBtn">회원가입</button> 					
 </div>			
 
 <div class="wrap">	

@@ -75,6 +75,7 @@ $(function(){
 	    	,	contentType: "application/json"
 	    	,	success: function() {    			    		
 	    			alert('등록 완료');
+	    			location.href = "/patternMain/patternMainView.do";
 	    		}
 	    	,	error: function(xhr, status, error) { alert('등록 실패'); }
 	    	});			

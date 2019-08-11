@@ -40,8 +40,11 @@ public class MemberController {
 	@RequestMapping(value="/loginCheck.do")
 	public ModelAndView loginCheck(@ModelAttribute MemberVo vo, HttpSession session) {
 		
+		vo.setUserId(vo.getUserId().trim());
+		vo.setUserPw(vo.getUserPw().trim());
+		
 		logger.debug("getUserId: " + vo.getUserId());
-		logger.debug("getUserPw: " + vo.getUserName());
+		logger.debug("getUserPw: " + vo.getUserPw());
 		
 		boolean result = memberService.loginCheck(vo, session);
 		
@@ -61,7 +64,7 @@ public class MemberController {
 			
 			// 로그인 페이지로 이동
 			mav.setViewName("member/login");
-			mav.addObject("msg", "fialure");			
+			mav.addObject("msg", "failure");			
 		}
 		
 		return mav;
@@ -81,4 +84,47 @@ public class MemberController {
 		
 		return mav;
 	}
+	
+	// 01. 회원가입 화면
+	@RequestMapping(value="/signUp.do")
+	public String signUp() {
+		return "member/signUp";
+	}	
+	
+	// 02. 회원가입 처리
+	// - 아이디가 DB에 유효하면 TRUE를 리턴 받아 회원가입 실패
+	// - 가입완료 시 로그인 화면으로 이동
+	@RequestMapping(value="/signUpCheck.do")
+	public ModelAndView signUpCheck(@ModelAttribute MemberVo vo, HttpSession session) {
+		
+		vo.setUserId(vo.getUserId().trim());
+		vo.setUserName(vo.getUserName().trim());
+		vo.setUserPw(vo.getUserPw().trim());
+		
+		logger.debug("getUserId: " + vo.getUserId());
+		logger.debug("getUserName: " + vo.getUserName());
+		logger.debug("getUserPw: " + vo.getUserPw());
+		
+		boolean result = memberService.signUpCheck(vo, session);
+		
+		logger.debug("회원가입 결과 : " + String.valueOf(result));
+		
+		ModelAndView mav = new ModelAndView();
+		
+		// 회원가입 실패
+		if(result == false) {
+			
+			// 회원가입 페이지로 이동
+			mav.setViewName("member/signUp");
+			// 메인으로 넘길 key, data
+			mav.addObject("msg", "failure");
+		// 회원가입 성공
+		} else {
+			
+			// 로그인 페이지로 이동
+			mav.setViewName("member/login");				
+		}
+		
+		return mav;
+	}	
 }

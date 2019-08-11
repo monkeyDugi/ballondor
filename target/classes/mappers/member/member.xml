@@ -25,4 +25,27 @@
 		 WHERE USER_ID = #{userId}
 		   AND USER_PW = #{userPw}
 	</select>	
+	
+	<!-- 회원가입ID 중복 체크 -->  
+	<select id="signUpCheck" parameterType="com.duk.ballondor.member.vo.MemberVo" resultType="String">
+		SELECT USER_ID AS userId
+		  FROM BALLONDOR.MEMBERLIST
+		 WHERE USER_ID = #{userId}		   
+	</select>
+		
+	<!-- 회원가입 insert -->  
+	<insert id="insertMember" parameterType="com.duk.ballondor.member.vo.MemberVo">
+		INSERT INTO BALLONDOR.MEMBERLIST
+		(
+			USER_ID
+		,	USER_PW
+		,	USER_NAME
+		)
+		VALUES
+		(
+			#{userId}
+		,	#{userPw}
+		,	#{userName}
+		)
+	</insert>	
 </mapper>

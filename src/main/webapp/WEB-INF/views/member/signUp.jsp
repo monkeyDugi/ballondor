@@ -1,6 +1,6 @@
 <!-- 
-	* programID : login.jsp
-	* 내용      : login 화면 
+	* programID : signUp.jsp
+	* 내용      : 회원가입 화면 
  -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -17,10 +17,10 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/resources/css/member/login.css">  
-<script src="<c:url value="/resources/js/member/login.js" />"></script> 
+<link rel="stylesheet" href="/resources/css/member/signUp.css">  
+<script src="<c:url value="/resources/js/member/signUp.js" />"></script> 
 
-<title>로그인</title>
+<title>회원가입</title>
 </head>
 <body>
 <div class="topBar" id="mainMove">
@@ -30,7 +30,7 @@
 </div>
 
 <div class="header">					
-	<button id="signUpBtn" class="signBtn">회원가입</button> 					
+	<button id="loginBtn" class="signBtn">로그인</button> 					
 </div>			
 	
 <div class="wrap">	
@@ -38,23 +38,25 @@
 	<form name="form1" method="post">	
 		<div class="content">	
 			<input type="text" id="userId" name="userId" placeholder="아이디"/>
+		<c:if test="${msg == 'failure'}">
+			<div class="msg"> 
+				<label class="fail">중복되는 아이디 입니다.</label>
+			</div> 
+		</c:if>			
+		<c:if test="${msg == null}">
+			<div class="msg"> 
+				<label class="nomal">중복되지 않는 아이디를 입력하세요</label>
+			</div> 
+		</c:if>				
+			<input type="text" id="userName" name="userName" placeholder="이름"/>
 			<input type="password" id="userPw" name="userPw" placeholder="비밀번호"/>
+	</form>		
+			<input type="password" id="userPwCheck" placeholder="비밀번호"/>
 		</div>													
-	</form>	
-	<c:if test="${msg == 'failure'}">
-		<div class="msg"> 
-			<label class="fail">아이디 또는 비밀번호가 일치하지 않습니다.</label>
-		</div> 
-	</c:if>			
-	<c:if test="${msg == null}">
-		<div class="msg"> 
-			<label class="nomal">로그인을 해주세요!</label>
-		</div> 
-	</c:if>			
 	</div>
 	<div class="footer">
-		<div class="loginBtnWrap">			
-			<button id="loginBtn" class="basicBtn">로그인</button> 			
+		<div class="signUpBtnWrap">			
+			<button id="signUpBtn" class="basicBtn">가입하기</button> 			
 		</div>
 	</div>			
 </div>

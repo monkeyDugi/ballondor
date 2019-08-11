@@ -35,5 +35,19 @@ public class MemberDaoImpl implements MemberDao {
 		// TODO Auto-generated method stub
 
 	}
+	
+	// 01_01. 회원가입ID 중복 체크
+	@Override
+	public boolean signUpCheck(MemberVo vo) {
+		String userId = sqlSession.selectOne(NAMESPACE + "signUpCheck", vo);
+		return (userId == null) ? true : false;
+	}
+
+	// 01_02. 회원가입 insert
+	@Override
+	public void insertMember(MemberVo vo) {
+		
+		sqlSession.insert(NAMESPACE + "insertMember", vo);
+	}	
 
 }
