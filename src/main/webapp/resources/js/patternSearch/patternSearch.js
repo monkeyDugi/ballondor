@@ -79,31 +79,29 @@ $(function(){
 				html +=			'<label name="doWork" class="doWork">' + obj[i-1].work + '</label>';
 				html +=		'</div>';	
 				html +=		'<div class="doDtlViWrap">';
-				html +=			'<input type="button" name="doDtlVi" class="basicBtn" value="준비중"/>';
+				/*html +=			'<button id="dtlViewIdx' + i + '"' + 'class="basicBtn" value="' + obj[i-1].idx + '"' + 'onClick="dtlViewClickFunc()">' + '상세조회</button>';*/ 
+				html +=			'<button id="dtlViewIdx' + i + '"' + 'class="basicBtn" value="' + obj[i-1].idx + '">' + '상세조회</button>'; 
 				html +=		'</div>';	
 				html +=		'<div class="doDateWrap">';
 				html +=			'<label name="doDate" class="doDate">' + obj[i-1].regi_date + '</label>';
 				html +=		'</div>';				
 				html +=	'</div>';
-				
-				
-				if(i%3 == 0 || i == obj.length) {
-					
-/*					alert(obj.length);
-					html = 	'<div class="middle">' + html + '</div>';
-					$('.wrap').append(html);
-					html = '';*/
+								
+				if(i%3 == 0 || i == obj.length) {				
 					
 					html = 	html + '</div>';
-					$('.wrap').append(html);
+					console.log(html);
+					$('.wrap').append(html);					
 					html = '';
-				}		
-			}
-			
-			//console.log(html);
-			
+				}						
+			}				
 		}	
 	}
+	
+	$('button').on('click', function() {
+		
+		alert(this.id);
+	});
 	
 	/* 의문 : 그래프 데이터 초기화가 안됨.
 	       - 마우스 오버 시 이전 데이털 변경되는 현상*/
@@ -191,6 +189,8 @@ $(function(){
 		location.href = "/member/logout.do";						    		
 	};	
 	
+	/****************************************** 이벤트 ******************************************/
+	
 	/* 조회 */
 	$('#searchBtn').click(function() {
 		
@@ -207,7 +207,9 @@ $(function(){
 	$('#signOutBtn').click(function() {
 		
 		$.fn.signOutFunc();
-	});	
+	});
+	
+	
 });	
 
 

@@ -14,7 +14,7 @@ $(function(){
 	};
 	
 	/* 아이디 15자 제한 */
-	$("input[name='userId']").on('keyup', function() {
+	$("#userId").on('keyup', function() {
 		
 		if( $(this).val().length > 15 ) {
 
@@ -23,7 +23,7 @@ $(function(){
 	});
 	
 	/* 이름 15자 제한 */
-	$("input[name='userName']").on('keyup', function() {
+	$("#userName").on('keyup', function() {
 		
 		if( $(this).val().length > 15 ) {
 			
@@ -32,7 +32,7 @@ $(function(){
 	});	
 	
 	/* 비밀번호 15자 제한 */
-	$("input[name='userPw']").on('keyup', function() {
+	$("#userPw").on('keyup', function() {
 		
 		if( $(this).val().length > 15 ) {
 			
@@ -41,7 +41,7 @@ $(function(){
 	});
 	
 	/* 비밀번호 체크 15자 제한 */
-	$("input[name='userPwCheck']").on('keyup', function() {
+	$("#userPwCheck").on('keyup', function() {
 		
 		if( $(this).val().length > 15 ) {
 			

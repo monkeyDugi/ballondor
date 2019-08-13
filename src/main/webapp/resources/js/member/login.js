@@ -14,7 +14,7 @@ $(function(){
 	};
 	
 	/* 15자 제한 */
-	$("input[name='userId']").on('keyup', function() {
+	$("#userId").on('keyup', function() {
 		
 		if( $(this).val().length > 15 ) {
 
@@ -23,7 +23,7 @@ $(function(){
 	});	
 	
 	/* 15자 제한 */
-	$("input[name='userPw']").on('keyup', function() {
+	$("#userPw").on('keyup', function() {
 		
 		if( $(this).val().length > 15 ) {
 			
