@@ -78,9 +78,8 @@ $(function(){
 				html +=		'<div class="doWorkWrap">';
 				html +=			'<label name="doWork" class="doWork">' + obj[i-1].work + '</label>';
 				html +=		'</div>';	
-				html +=		'<div class="doDtlViWrap">';
-				/*html +=			'<button id="dtlViewIdx' + i + '"' + 'class="basicBtn" value="' + obj[i-1].idx + '"' + 'onClick="dtlViewClickFunc()">' + '상세조회</button>';*/ 
-				html +=			'<button id="dtlViewIdx' + i + '"' + 'class="basicBtn" value="' + obj[i-1].idx + '">' + '상세조회</button>'; 
+				html +=		'<div class="doDtlViWrap">';				
+				html +=			'<button class="basicBtn" value="' + obj[i-1].idx + '">' + '상세조회</button>'; 
 				html +=		'</div>';	
 				html +=		'<div class="doDateWrap">';
 				html +=			'<label name="doDate" class="doDate">' + obj[i-1].regi_date + '</label>';
@@ -98,9 +97,14 @@ $(function(){
 		}	
 	}
 	
-	$('button').on('click', function() {
+	/* 
+	 * 상세조회 버튼
+	 * 동적 생성된 태그 이벤트 
+	 * 클릭된 태그의 값을 가져온다.
+	 * */
+	$(document).on("click", ".doDtlViWrap .basicBtn", function() {
 		
-		alert(this.id);
+		alert($(this).val());				
 	});
 	
 	/* 의문 : 그래프 데이터 초기화가 안됨.
