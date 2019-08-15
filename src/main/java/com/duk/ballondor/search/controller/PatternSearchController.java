@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.duk.ballondor.common.LoggerInterceptor;
+import com.duk.ballondor.search.dto.SearchDtlWorkListDto;
 import com.duk.ballondor.search.dto.SearchWorkListDto;
 import com.duk.ballondor.search.service.PatternSearchService;
+import com.duk.ballondor.search.vo.SearchDtlWorkListVo;
 import com.duk.ballondor.search.vo.SearchWorkListVo;
 
 @Controller
@@ -37,7 +39,7 @@ public class PatternSearchController {
 			return "patternSearch/patternSearchView";		
 	}
 	
-	/* 상세보기 */
+	/* 상세보기 화면 이동*/
 	@RequestMapping(value="/patternSearchDtlView.do")
 	public String searchDtl(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return "patternSearch/patternSearchDtlView";		
@@ -65,5 +67,24 @@ public class PatternSearchController {
 		logger.debug(param.getUser_id());*/
 		List<SearchWorkListDto> workBarList = patternSearchService.getBarWorkList(param);		
 		return workBarList;
+	}	
+	
+	/* 상세화면 최초 조회 */
+	@RequestMapping(value="/selectDtlWorkSearch.do")
+	@ResponseBody
+	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception{				
+				
+		logger.debug("idx : " + param.getIdx());
+		
+		List<SearchDtlWorkListDto> dtlWorkList = patternSearchService.getDtlWorkList(param);		
+		return dtlWorkList;
+	}
+	
+	/* 상세 수정 */
+	@RequestMapping(value="/updateDtl.do")
+	@ResponseBody
+	public int updateDtl(SearchDtlWorkListVo param) throws Exception{				
+		
+		return patternSearchService.updateDtl(param);				
 	}	
 }

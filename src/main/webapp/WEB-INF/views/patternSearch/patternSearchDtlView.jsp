@@ -19,6 +19,10 @@
 <script src="<c:url value="/resources/js/patternSearch/patternSearchDtl.js" />"></script> 
 
 <title>상세 보기</title>
+<%
+	String idx = request.getParameter("idx");
+%>
+	<c:set var="idx" value="<%=idx%>"/>
 </head>
 <body>
 <!-- 로그인 정보(userId) -->
@@ -38,24 +42,25 @@
 <div class="wrap">	
 	<div class="header">			
 		<div class="date">
-			<label>2019-08-07</label>					
+			<label id="date">날짜</label>					
 		</div>					
 	</div>			
 	
 	<div class="middle">
 		<div class="content">	
+			<input type="hidden" id="idx" value="${idx}"/>
 			<div class="doWorkWrap">
-				<label>한 일</label>	
+				<label id="doWork">한 일</label>	
 			</div>
 			<div class="doContentWrap">	
-				<textarea name="doContent" class="doContent" placeholder="상세내용을 최대 100자 내로 입력하세요"></textarea>
+				<textarea id= "doContent" name="doContent" class="doContent" placeholder="상세내용을 최대 100자 내로 입력하세요"></textarea>
 			</div>	
 		</div>									
 	</div>
 	<div class="footer">
 		<div class="upt">			
 			<button id="uptBtn" class="basicBtn">수정</button> 
-			<button id="closBtn" class="basicBtn">닫기</button> 
+			<button id="closeBtn" class="basicBtn">닫기</button> 
 		</div>
 	</div>			
 </div>

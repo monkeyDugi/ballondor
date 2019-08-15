@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.duk.ballondor.search.dao.PatternSearchDao;
+import com.duk.ballondor.search.dto.SearchDtlWorkListDto;
 import com.duk.ballondor.search.dto.SearchWorkListDto;
+import com.duk.ballondor.search.vo.SearchDtlWorkListVo;
 import com.duk.ballondor.search.vo.SearchWorkListVo;
 
 @Service
@@ -31,4 +33,16 @@ public class PatternSearchService {
 		
 		return patternSearchDao.getBarWorkList(param);
 	}
+	
+	/* 상세조회 */
+	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception {
+		
+		return patternSearchDao.getDtlWorkList(param);
+	}
+	
+	/* 상세수정 */
+	public int updateDtl(SearchDtlWorkListVo param) throws Exception {
+		
+		return patternSearchDao.updateDtl(param);
+	}	
 }

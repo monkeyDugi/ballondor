@@ -12,7 +12,9 @@ import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.duk.ballondor.search.dto.SearchDtlWorkListDto;
 import com.duk.ballondor.search.dto.SearchWorkListDto;
+import com.duk.ballondor.search.vo.SearchDtlWorkListVo;
 import com.duk.ballondor.search.vo.SearchWorkListVo;
 
 
@@ -35,4 +37,16 @@ public class PatternSearchDao {
 		
 		return sqlSession.selectList(NAMESPACE + "getBarWorkList", param);
 	}
+
+	/* 상세조회 */
+	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception {
+		
+		return sqlSession.selectList(NAMESPACE + "getDtlWorkList", param);
+	}
+	
+	/* 상세수정 */
+	public int updateDtl(SearchDtlWorkListVo param) throws Exception {
+		
+		return sqlSession.update(NAMESPACE + "updateDtl", param);
+	}	
 }

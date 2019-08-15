@@ -32,4 +32,21 @@
          ORDER BY REGI_DATE DESC
                 , WORK
 	</select>	
+	
+	<!-- 상세조회 -->  
+	<select id="getDtlWorkList" parameterType="com.duk.ballondor.search.vo.SearchDtlWorkListVo" resultType="com.duk.ballondor.search.dto.SearchDtlWorkListDto">
+		SELECT WORK
+		     , CONTENT
+		     , REGI_DATE   			    
+		  FROM BALLONDOR.WORK_LIST_MAIN
+		 WHERE IDX = #{ idx } 
+	</select>
+		
+	<!-- 상세수정 -->  
+	<delete id="updateDtl" parameterType="com.duk.ballondor.search.vo.SearchDtlWorkListVo">
+		UPDATE BALLONDOR.WORK_LIST_MAIN
+		   SET CONTENT = #{ content }
+		 WHERE IDX = #{ idx }
+		   AND USER_ID = #{ user_id }
+	</delete>	
 </mapper>

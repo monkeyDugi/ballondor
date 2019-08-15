@@ -7,6 +7,9 @@
 /* 나중에 session 생각 */
 $(function(){
 	
+	// 최초 로드 시 포커스
+	$('#userId').focus();
+	
 	/* 회원가입 페이지 이동 */
 	$.fn.signUpFunc = function() {
 		    

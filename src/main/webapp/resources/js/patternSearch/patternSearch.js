@@ -104,7 +104,9 @@ $(function(){
 	 * */
 	$(document).on("click", ".doDtlViWrap .basicBtn", function() {
 		
-		alert($(this).val());				
+		//alert($(this).val());
+		var idx = $(this).val();
+		location.href = "/patternSearch/patternSearchDtlView.do?idx=" + idx;
 	});
 	
 	/* 의문 : 그래프 데이터 초기화가 안됨.
