@@ -1,42 +1,64 @@
+<!-- 
+	* programID : signUp.jsp
+	* ë‚´ìš©      : íšŒì›ê°€ìž… í™”ë©´ 
+ -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>È¸¿ø°¡ÀÔ</title>
-<!-- <link rel="stylesheet" href="css/signUp.css"> -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<!-- <script src="js/selectTest.js"></script> -->
-<script src="<c:url value="/resources/js/selectTest.js" />"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 
-</head>         
+<link rel="stylesheet" href="/resources/css/member/signUp.css">  
+<script src="<c:url value="/resources/js/member/signUp.js" />"></script> 
+
+<title>íšŒì›ê°€ìž…</title>
+</head>
 <body>
-<div class="container">
-	<h1>È¸¿ø°¡ÀÔ</h1>
+<div class="topBar" id="mainMove">
+	<label class="topLabel">
+		MyPattern
+	</label>
+</div>
+
+<div class="header">					
+	<button id="loginBtn" class="signBtn">ë¡œê·¸ì¸</button> 					
+</div>			
 	
-	<div class="label">ÀÌ¸§</div>
-	<div class="form">
-		<input type="text" id="userNm" placeholder="ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä"/>	
+<div class="wrap">	
+	<div class="middle">
+	<form name="form1" method="post">	
+		<div class="content">	
+			<input type="text" id="userId" name="userId" placeholder="ì•„ì´ë””"/>
+		<c:if test="${msg == 'failure'}">
+			<div class="msg"> 
+				<label class="fail">ì¤‘ë³µë˜ëŠ” ì•„ì´ë”” ìž…ë‹ˆë‹¤.</label>
+			</div> 
+		</c:if>			
+		<c:if test="${msg == null}">
+			<div class="msg"> 
+				<label class="nomal">ì¤‘ë³µë˜ì§€ ì•ŠëŠ” ì•„ì´ë””ë¥¼ ìž…ë ¥í•˜ì„¸ìš”</label>
+			</div> 
+		</c:if>				
+			<input type="text" id="userName" name="userName" placeholder="ì´ë¦„"/>
+			<input type="password" id="userPw" name="userPw" placeholder="ë¹„ë°€ë²ˆí˜¸"/>
+	</form>		
+			<input type="password" id="userPwCheck" placeholder="ë¹„ë°€ë²ˆí˜¸"/>
+		</div>													
 	</div>
-	
-	<div class="label">¾ÆÀÌµð</div>
-	<div class="form">
-		<input type="text" id="userId" placeholder="¾ÆÀÌµð¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä"/>	
-	</div>	
-	
-	<div class="label">ºñ¹Ð¹øÈ£</div>
-	<div class="form">
-		<input type="password" id="userPw" placeholder="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä"/>	
-	</div>
-	
-	<div class="label">ºñ¹Ð¹øÈ£È®ÀÎ</div>
-	<div class="form">
-		<input type="password" id="userCheckPw" placeholder="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä"/>	
-	</div>	
-	
-	<button id="signUp">°¡ÀÔÇÏ±â</button>
+	<div class="footer">
+		<div class="signUpBtnWrap">			
+			<button id="signUpBtn" class="basicBtn">ê°€ìž…í•˜ê¸°</button> 			
+		</div>
+	</div>			
 </div>
 </body>
 </html>

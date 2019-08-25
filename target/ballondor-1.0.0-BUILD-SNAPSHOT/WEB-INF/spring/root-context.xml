@@ -11,8 +11,9 @@
 		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd">
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/board?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC"/>
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<!-- <property name="url" value="jdbc:mysql://localhost:3306/ballondor?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC"/> -->
+		<property name="url" value="jdbc:mysql://18.217.18.129:3306/ballondor?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC"/>  		
 		<property name="username" value="root"/>
 		<property name="password" value="1111"/>
 	</bean>
@@ -20,7 +21,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation" value="classpath:mybatis-config.xml"/>
-		<property name="mapperLocations" value="classpath:mappers/*/*.xml"></property>
+		<property name="mapperLocations" value="classpath:mappers/**/*.xml"></property>
 	</bean>
 	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
