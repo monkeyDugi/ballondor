@@ -1,6 +1,6 @@
 /*
  * programID : MemberDao.java
- * ³»¿ë   	 : ·Î±×ÀÎ DAO
+ * ë‚´ìš©   	 : ë¡œê·¸ì¸ DAO
  * */
 
 package com.duk.ballondor.member.dao;
@@ -11,18 +11,18 @@ import com.duk.ballondor.member.vo.MemberVo;
 
 public interface MemberDao {
 
-	// 01_01. È¸¿ø ·Î±×ÀÎ Ã¼Å©
+	// 01_01. íšŒì› ë¡œê·¸ì¸ ì²´í¬
 	public boolean loginCheck(MemberVo vo);
 	
-	// 01_02. È¸¿ø ·Î±×ÀÎ Á¤º¸
+	// 01_02. íšŒì› ë¡œê·¸ì¸ ì •ë³´
 	public MemberVo viewMember(MemberVo vo);
 	
-	// 02. È¸¿ø ·Î±×¾Æ¿ô
+	// 02. íšŒì› ë¡œê·¸ì•„ì›ƒ
 	public void logout(HttpSession session);
 
-	// 01_01. È¸¿ø°¡ÀÔID Áßº¹ Ã¼Å©
+	// 01_01. íšŒì›ê°€ì…ID ì¤‘ë³µ ì²´í¬
 	public boolean signUpCheck(MemberVo vo);
 
-	// 01_02. È¸¿ø°¡ÀÔ insert
+	// 01_02. íšŒì›ê°€ì… insert
 	public void insertMember(MemberVo vo);
 }

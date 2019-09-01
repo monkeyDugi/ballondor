@@ -1,6 +1,6 @@
 /*
  * programID : MemberService.java
- * ³»¿ë      : ·Î±×ÀÎ ÀÎÅÍÆäÀÌ½º
+  * ë‚´ìš©      : ë¡œê·¸ì¸ ì¸í„°í˜ì´ìŠ¤
  * */
 
 package com.duk.ballondor.member.service;
@@ -11,18 +11,18 @@ import com.duk.ballondor.member.vo.MemberVo;
 
 public interface MemberService {
 
-	// 01_01. È¸¿ø ·Î±×ÀÎ Ã¼Å©
+	// 01_01. íšŒì› ë¡œê·¸ì¸ ì²´í¬
 	public boolean loginCheck(MemberVo vo, HttpSession session);
 	
-	// 01_02. È¸¿ø ·Î±×ÀÎ Á¤º¸
+	// 01_02. íšŒì› ë¡œê·¸ì¸ ì •ë³´
 	public MemberVo viewMember(MemberVo vo);
 	
-	// 02. È¸¿ø ·Î±×¾Æ¿ô
+	// 02. íšŒì› ë¡œê·¸ì•„ì›ƒ
 	public void logout(HttpSession session);
 
-	// 01_01. È¸¿ø°¡ÀÔ ID Áßº¹ Ã¼Å©
+	// 01_01. íšŒì›ê°€ì… ID ì¤‘ë³µ ì²´í¬
 	public boolean signUpCheck(MemberVo vo, HttpSession session);
 
-	// 01_02. È¸¿ø°¡ÀÔ insert
+	// 01_02. íšŒì›ê°€ì… insert
 	public void insertMember(MemberVo vo);
 }

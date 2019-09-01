@@ -1,6 +1,6 @@
 /*
  * programID : MemeberServiceImpl.java
- * ³»¿ë      : ·Î±×ÀÎ ¼­ºñ½º ±¸Çö
+* ë‚´ìš©      : ë¡œê·¸ì¸ ì„œë¹„ìŠ¤ êµ¬í˜„
  * */
 
 package com.duk.ballondor.member.service;
@@ -24,17 +24,17 @@ public class MemberServiceImpl implements MemberService {
 	@Inject
 	MemberDao memberDao;
 	
-	// 01_01. È¸¿ø ·Î±×ÀÎ Ã¼Å©
+	// 01_01. íšŒì› ë¡œê·¸ì¸ ì²´í¬
 	@Override
 	public boolean loginCheck(MemberVo vo, HttpSession session) {
 		
 		boolean result = memberDao.loginCheck(vo);
 		
-		// trueÀÌ¸é ¼¼¼Ç µî·Ï
+		// trueì´ë©´ ì„¸ì…˜ ë“±ë¡
 		if(result) {
 			
 			MemberVo vo2 = viewMember(vo);
-			// ¼¼¼Ç º¯¼ö µî·Ï
+			// ì„¸ì…˜ ë³€ìˆ˜ ë“±ë¡
 			session.setAttribute("userId", vo2.getUserId());
 			session.setAttribute("userName", vo2.getUserName());
 			
@@ -44,26 +44,26 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 	
-	// 01_02. È¸¿ø ·Î±×ÀÎ Á¤º¸
+	// 01_02. íšŒì› ë¡œê·¸ì¸ ì •ë³´
 	@Override
 	public MemberVo viewMember(MemberVo vo) {
 		
 		return memberDao.viewMember(vo);
 	}
 	
-	// 02. È¸¿ø ·Î±×¾Æ¿ô
+	// 02. íšŒì› ë¡œê·¸ì•„ì›ƒ
 	@Override
 	public void logout(HttpSession session) {
 		
-		// ¼¼¼Ç Á¤º¸ ÃÊ±âÈ­
+		// ì„¸ì…˜ ì •ë³´ ì´ˆê¸°í™”
 		session.invalidate();
 	}
 	
-	// 01_01. È¸¿ø°¡ÀÔID Áßº¹ Ã¼Å©
+	// 01_01. íšŒì›ê°€ì…ID ì¤‘ë³µ ì²´í¬
 	@Override
 	public boolean signUpCheck(MemberVo vo, HttpSession session) {
 		
-		// ¾ÆÀÌµğ Áßº¹ÀÌ¸é false ¸®ÅÏ
+		// ì•„ì´ë”” ì¤‘ë³µì´ë©´ false ë¦¬í„´
 		boolean result = memberDao.signUpCheck(vo);
 		
 		if(result == true) {
@@ -74,7 +74,7 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 	
-	// 01_02. È¸¿ø°¡ÀÔ insert
+	// 01_02. íšŒì›ê°€ì… insert
 	@Override
 	public void insertMember(MemberVo vo) {
 		

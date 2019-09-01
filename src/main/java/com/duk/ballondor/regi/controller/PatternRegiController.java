@@ -1,6 +1,6 @@
 /*
  * programID : PatternRegiControlloer.java
- * ³»¿ë      : µî·Ï ÆäÀÌÁö Conteroller
+ * ë‚´ìš©      : ë“±ë¡ í˜ì´ì§€ Conteroller
  * */
 
 package com.duk.ballondor.regi.controller;
@@ -56,10 +56,10 @@ public class PatternRegiController {
 	}
 	
 	/*
-	 * ÀÇ¹®
-	 * - pop Á¶È¸ ¹× µî·Ï ½Ã GETÀ» »ç¿ëÇØµµ µÇ´Âµ¥ ¿Ö ¸ŞÀÎ µî·Ï ½Ã¿¡¸¸ POST¸¦ »ç¿ëÇØ¾ß ÇÏ´Â°¡
-	 * - @RequestBody¸¦ WorkListVo ¾Õ¿¡ ºÙ¿©¾ß ÇÏ´Â ÀÌÀ¯
-	 * - HttpServletRequest request, HttpServletResponse response ÀÌ¶õ?
+	 * ì˜ë¬¸
+	 * - pop ì¡°íšŒ ë° ë“±ë¡ ì‹œ GETì„ ì‚¬ìš©í•´ë„ ë˜ëŠ”ë° ì™œ ë©”ì¸ ë“±ë¡ ì‹œì—ë§Œ POSTë¥¼ ì‚¬ìš©í•´ì•¼ í•˜ëŠ”ê°€
+	 * - @RequestBodyë¥¼ WorkListVo ì•ì— ë¶™ì—¬ì•¼ í•˜ëŠ” ì´ìœ 
+	 * - HttpServletRequest request, HttpServletResponse response ì´ë€?
 	 */
 	/* register */
 	@RequestMapping(value="/insertWorkRegi.do", method=RequestMethod.POST)

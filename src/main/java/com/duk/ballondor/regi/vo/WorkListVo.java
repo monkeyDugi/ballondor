@@ -1,7 +1,4 @@
-/*
- * programID : WorkListVo.java
- * 내용      : 등록 페이지 VO( Value Object )
- * */
+
 
 package com.duk.ballondor.regi.vo;
 
@@ -9,10 +6,10 @@ import java.util.List;
 
 public class WorkListVo {
 
-	private String user_id;   // 회원 ID
-	private String work;      // 등록할 일
-	private String content;   // 등록할 일 내용
-	private String regiDate;  // 메인 등록할 일자
+	private String user_id;  
+	private String work;      
+	private String content;   
+	private String regiDate;  
 	private List<WorkListVo> workList;
 	
 	

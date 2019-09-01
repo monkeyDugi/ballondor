@@ -16,14 +16,14 @@ public class MemberDaoImpl implements MemberDao {
 	
 	private static final String NAMESPACE = "com.duk.ballondor.member.memberMapper.";
 	
-	// 01_01. È¸¿ø ·Î±×ÀÎ Ã¼Å©
+	// 01_01. íšŒì› ë¡œê·¸ì¸ ì²´í¬
 	@Override
 	public boolean loginCheck(MemberVo vo) {
 		String name = sqlSession.selectOne(NAMESPACE + "loginCheck", vo);
 		return (name == null) ? false : true;
 	}
 
-	// 01_02. È¸¿ø ·Î±×ÀÎ Á¤º¸
+	// 01_02. íšŒì› ë¡œê·¸ì¸ ì •ë³´
 	@Override
 	public MemberVo viewMember(MemberVo vo) {
 		
@@ -36,14 +36,14 @@ public class MemberDaoImpl implements MemberDao {
 
 	}
 	
-	// 01_01. È¸¿ø°¡ÀÔID Áßº¹ Ã¼Å©
+	// 01_01. íšŒì›ê°€ì…ID ì¤‘ë³µ ì²´í¬
 	@Override
 	public boolean signUpCheck(MemberVo vo) {
 		String userId = sqlSession.selectOne(NAMESPACE + "signUpCheck", vo);
 		return (userId == null) ? true : false;
 	}
 
-	// 01_02. È¸¿ø°¡ÀÔ insert
+	// 01_02. íšŒì›ê°€ì… insert
 	@Override
 	public void insertMember(MemberVo vo) {
 		

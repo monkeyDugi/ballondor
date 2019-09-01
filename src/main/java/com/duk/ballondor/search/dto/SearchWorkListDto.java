@@ -5,7 +5,7 @@ public class SearchWorkListDto {
 	private int idx;
 	private String work; 		
 	private String regi_date;
-	private int ranking;			// 그래프 카운트
+	private int ranking;			
 	
 	public int getIdx() {
 		return idx;

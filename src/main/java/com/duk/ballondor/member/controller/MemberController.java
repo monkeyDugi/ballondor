@@ -1,6 +1,6 @@
 /*
  * programID : MemeberControlloer.java
- * ³»¿ë      : ·Î±×ÀÎ Conteroller
+ * ë‚´ìš©      : ë¡œê·¸ì¸ Conteroller
  * */
 
 package com.duk.ballondor.member.controller;
@@ -28,15 +28,15 @@ public class MemberController {
 	@Inject
 	MemberService memberService;
 	
-	// 01. ·Î±×ÀÎ È­¸é
+	// 01. ë¡œê·¸ì¸ í™”ë©´
 	@RequestMapping(value="/login.do")
 	public String login() {
 		return "member/login";
 	}
 	
-	// 02. ·Î±×ÀÎ Ã³¸®
-	// - ¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£°¡ DB¿¡ À¯È¿ÇÏ¸é TRUE¸¦ ¸®ÅÏ ¹Ş¾Æ ·Î±×ÀÎ ¼º°ø.
-	// - ¼­ºñ½º¿¡¼­ ¼º°ø ½Ã ¼¼¼Ç¿¡ ¾ÆÀÌµğ¿Í ÀÌ¸§ µî·Ï.
+	// 02. ë¡œê·¸ì¸ ì²˜ë¦¬
+	// - ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ê°€ DBì— ìœ íš¨í•˜ë©´ TRUEë¥¼ ë¦¬í„´ ë°›ì•„ ë¡œê·¸ì¸ ì„±ê³µ.
+	// - ì„œë¹„ìŠ¤ì—ì„œ ì„±ê³µ ì‹œ ì„¸ì…˜ì— ì•„ì´ë””ì™€ ì´ë¦„ ë“±ë¡.
 	@RequestMapping(value="/loginCheck.do")
 	public ModelAndView loginCheck(@ModelAttribute MemberVo vo, HttpSession session) {
 		
@@ -48,21 +48,21 @@ public class MemberController {
 		
 		boolean result = memberService.loginCheck(vo, session);
 		
-		logger.debug("·Î±×ÀÎ °á°ú : " + String.valueOf(result));
+		logger.debug("ë¡œê·¸ì¸ ê²°ê³¼  : " + String.valueOf(result));
 		
 		ModelAndView mav = new ModelAndView();
 		
-		// ·Î±×ÀÎ ¼º°ø
+		// ë¡œê·¸ì¸ ì„±ê³µ
 		if(result == true) {
 			
-			// ¸ŞÀÎ ÆäÀÌÁö·Î ÀÌµ¿
+			// ë©”ì¸ í˜ì´ì§€ë¡œ ì´ë™
 			mav.setViewName("patternMain/patternMainView");
-			// ¸ŞÀÎÀ¸·Î ³Ñ±æ key, data
+			// ë©”ì¸ìœ¼ë¡œ ë„˜ê¸¸ key, data
 			mav.addObject("msg", "success");
-		// ·Î±×ÀÎ ½ÇÆĞ
+			// ë¡œê·¸ì¸ ì‹¤íŒ¨
 		} else {
 			
-			// ·Î±×ÀÎ ÆäÀÌÁö·Î ÀÌµ¿
+			// ë¡œê·¸ì¸ í˜ì´ì§€ë¡œ ì´ë™
 			mav.setViewName("member/login");
 			mav.addObject("msg", "failure");			
 		}
@@ -70,7 +70,7 @@ public class MemberController {
 		return mav;
 	}
 	
-	// 03. ·Î±×¾Æ¿ô Ã³¸®
+	// 03. ë¡œê·¸ì•„ì›ƒ ì²˜ë¦¬
 	@RequestMapping(value="logout.do")
 	public ModelAndView logout(HttpSession session) {
 		
@@ -78,22 +78,22 @@ public class MemberController {
 		
 		ModelAndView mav = new ModelAndView();
 		
-		// ¸ŞÀÎ ÆäÀÌÁö·Î ÀÌµ¿
+		// ë©”ì¸ í˜ì´ì§€ë¡œ ì´ë™
 		mav.setViewName("patternMain/patternMainView");
 		/*mav.addObject("msg", "logout");*/
 		
 		return mav;
 	}
 	
-	// 01. È¸¿ø°¡ÀÔ È­¸é
+	// 01. íšŒì›ê°€ì… í™”ë©´
 	@RequestMapping(value="/signUp.do")
 	public String signUp() {
 		return "member/signUp";
 	}	
 	
-	// 02. È¸¿ø°¡ÀÔ Ã³¸®
-	// - ¾ÆÀÌµğ°¡ DB¿¡ À¯È¿ÇÏ¸é TRUE¸¦ ¸®ÅÏ ¹Ş¾Æ È¸¿ø°¡ÀÔ ½ÇÆĞ
-	// - °¡ÀÔ¿Ï·á ½Ã ·Î±×ÀÎ È­¸éÀ¸·Î ÀÌµ¿
+	// 02. íšŒì›ê°€ì… ì²˜ë¦¬
+	// - ì•„ì´ë””ê°€ DBì— ìœ íš¨í•˜ë©´ TRUEë¥¼ ë¦¬í„´ ë°›ì•„ íšŒì›ê°€ì… ì‹¤íŒ¨
+	// - ê°€ì…ì™„ë£Œ ì‹œ ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™
 	@RequestMapping(value="/signUpCheck.do")
 	public ModelAndView signUpCheck(@ModelAttribute MemberVo vo, HttpSession session) {
 		
@@ -107,21 +107,21 @@ public class MemberController {
 		
 		boolean result = memberService.signUpCheck(vo, session);
 		
-		logger.debug("È¸¿ø°¡ÀÔ °á°ú : " + String.valueOf(result));
+		logger.debug("íšŒì›ê°€ì… ê²°ê³¼ : " + String.valueOf(result));
 		
 		ModelAndView mav = new ModelAndView();
 		
-		// È¸¿ø°¡ÀÔ ½ÇÆĞ
+		// íšŒì›ê°€ì… ì‹¤íŒ¨
 		if(result == false) {
 			
-			// È¸¿ø°¡ÀÔ ÆäÀÌÁö·Î ÀÌµ¿
+			// íšŒì›ê°€ì… í˜ì´ì§€ë¡œ ì´ë™
 			mav.setViewName("member/signUp");
-			// ¸ŞÀÎÀ¸·Î ³Ñ±æ key, data
+			// ë©”ì¸ìœ¼ë¡œ ë„˜ê¸¸ key, data
 			mav.addObject("msg", "failure");
-		// È¸¿ø°¡ÀÔ ¼º°ø
+			// íšŒì›ê°€ì… ì„±ê³µ
 		} else {
 			
-			// ·Î±×ÀÎ ÆäÀÌÁö·Î ÀÌµ¿
+			// ë¡œê·¸ì¸ í˜ì´ì§€ë¡œ ì´ë™
 			mav.setViewName("member/login");				
 		}
 		

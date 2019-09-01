@@ -1,6 +1,6 @@
 /*
  * programID : PatternSearchDao.java
- * ³»¿ë      : Á¶È¸ ÆäÀÌÁö DAO( Data Access Object )
+ * ë‚´ìš©      : ì¡°íšŒ í˜ì´ì§€ DAO( Data Access Object )
  * */
 
 package com.duk.ballondor.search.dao;
@@ -26,25 +26,25 @@ public class PatternSearchDao {
 	
 	private static final String NAMESPACE = "com.duk.ballondor.search.searchMapper.";
 	
-	/* Á¶È¸ */
+	/* ì¡°íšŒ */
 	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) throws Exception {
 		
 		return sqlSession.selectList(NAMESPACE + "getWorkList", param);
 	}
 	
-	/* ±×·¡ÇÁ Á¶È¸ */
+	/* ê·¸ë˜í”„ ì¡°íšŒ */
 	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) throws Exception {
 		
 		return sqlSession.selectList(NAMESPACE + "getBarWorkList", param);
 	}
 
-	/* »ó¼¼Á¶È¸ */
+	/* ìƒì„¸ì¡°íšŒ */
 	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception {
 		
 		return sqlSession.selectList(NAMESPACE + "getDtlWorkList", param);
 	}
 	
-	/* »ó¼¼¼öÁ¤ */
+	/* ìƒì„¸ìˆ˜ì • */
 	public int updateDtl(SearchDtlWorkListVo param) throws Exception {
 		
 		return sqlSession.update(NAMESPACE + "updateDtl", param);

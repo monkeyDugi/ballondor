@@ -2,9 +2,9 @@ package com.duk.ballondor.search.vo;
 
 public class SearchDtlWorkListVo {
 
-	private int idx;         // 조회화면 idx
-	private String content;  // 상세화면 내용
-	private String user_id;  // 세션 ID
+	private int idx;         
+	private String content;  
+	private String user_id; 
 	
 	public int getIdx() {
 		return idx;

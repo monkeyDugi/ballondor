@@ -1,7 +1,3 @@
-/*
- * ProgramID : MemberVo.java
- * 내용      : 로그인 VO
- * */
 
 package com.duk.ballondor.member.vo;
 

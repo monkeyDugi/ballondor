@@ -1,6 +1,6 @@
 /*
  * programID : PatternRegiService.java
- * ³»¿ë      : µî·Ï ÆäÀÌÁö Service
+ * ë‚´ìš©      : ë“±ë¡í˜ì´ì§€ Service
  * */
 
 package com.duk.ballondor.regi.service;

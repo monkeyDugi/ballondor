@@ -1,6 +1,6 @@
 /*
  * programID : PatternSearchService.java
- * ³»¿ë      : Á¶È¸ ÆäÀÌÁö Service
+ * ë‚´ìš©      : ì¡°íšŒ í˜ì´ì§€ Service
  * */
 
 package com.duk.ballondor.search.service;
@@ -22,25 +22,25 @@ public class PatternSearchService {
 	@Autowired
 	private PatternSearchDao patternSearchDao;
 	
-	/* Á¶È¸ */
+	/* ì¡°íšŒ */
 	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) throws Exception {
 		
 		return patternSearchDao.getWorkList(param);
 	}
 	
-	/* ±×·¡ÇÁ Á¶È¸ */
+	/* ê·¸ë˜í”„ ì¡°íšŒ */
 	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) throws Exception {
 		
 		return patternSearchDao.getBarWorkList(param);
 	}
 	
-	/* »ó¼¼Á¶È¸ */
+	/* ìƒì„¸ì¡°íšŒ */
 	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception {
 		
 		return patternSearchDao.getDtlWorkList(param);
 	}
 	
-	/* »ó¼¼¼öÁ¤ */
+	/* ìƒì„¸ìˆ˜ì • */
 	public int updateDtl(SearchDtlWorkListVo param) throws Exception {
 		
 		return patternSearchDao.updateDtl(param);

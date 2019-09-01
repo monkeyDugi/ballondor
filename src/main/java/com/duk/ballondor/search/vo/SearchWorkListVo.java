@@ -2,9 +2,9 @@ package com.duk.ballondor.search.vo;
 
 public class SearchWorkListVo {
 
-	private String user_id;  		// 회원 ID
-	private String from_date;  	    // 조회 from 일자
-	private String to_date;         // 조회 to 일자
+	private String user_id;  		
+	private String from_date;  	    
+	private String to_date;         
 	
 	public String getUser_id() {
 		return user_id;

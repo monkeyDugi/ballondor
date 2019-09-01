@@ -1,6 +1,6 @@
 /*
  * programID : PatternRegiDao.java
- * ³»¿ë      : µî·Ï ÆäÀÌÁö DAO( Data Access Object )
+ * ë‚´ìš©      : ë“±ë¡ í˜ì´ì§€ DAO( Data Access Object )
  * */
 
 package com.duk.ballondor.regi.dao;

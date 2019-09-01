@@ -1,6 +1,6 @@
 /*
  * programID : PatternSearchControlloer.java
- * ³»¿ë      : Á¶È¸ ÆäÀÌÁö Conteroller
+  * ë‚´ìš©      : ì¡°íšŒ í˜ì´ì§€ Conteroller
  * */
 
 package com.duk.ballondor.search.controller;
@@ -33,19 +33,19 @@ public class PatternSearchController {
 	@Autowired
 	private PatternSearchService patternSearchService;
 	
-	/* Á¶È¸ È­¸é*/
+	/* ì¡°íšŒ í™”ë©´*/
 	@RequestMapping(value="/patternSearchView.do")
 	public String search(HttpServletRequest request, HttpServletResponse response) throws Exception {
 			return "patternSearch/patternSearchView";		
 	}
 	
-	/* »ó¼¼º¸±â È­¸é ÀÌµ¿*/
+	/* ìƒì„¸ë³´ê¸° í™”ë©´ ì´ë™*/
 	@RequestMapping(value="/patternSearchDtlView.do")
 	public String searchDtl(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return "patternSearch/patternSearchDtlView";		
 	}		
 	
-	/* Á¶È¸ */
+	/* ì¡°íšŒ */
 	@RequestMapping(value="/selectWorkSearch.do")
 	@ResponseBody
 	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) throws Exception{				
@@ -57,7 +57,7 @@ public class PatternSearchController {
 		return workList;
 	}
 	
-	/* ±×·¡ÇÁ Á¶È¸ */
+	/* ê·¸ë˜í”„ ì¡°íšŒ */
 	@RequestMapping(value="/selectBarWorkSearch.do")
 	@ResponseBody
 	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) throws Exception{				
@@ -69,7 +69,7 @@ public class PatternSearchController {
 		return workBarList;
 	}	
 	
-	/* »ó¼¼È­¸é ÃÖÃÊ Á¶È¸ */
+	/* ìƒì„¸í™”ë©´ ìµœì´ˆ ì¡°íšŒ */
 	@RequestMapping(value="/selectDtlWorkSearch.do")
 	@ResponseBody
 	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception{				
@@ -80,7 +80,7 @@ public class PatternSearchController {
 		return dtlWorkList;
 	}
 	
-	/* »ó¼¼ ¼öÁ¤ */
+	/* ìƒì„¸ ìˆ˜ì • */
 	@RequestMapping(value="/updateDtl.do")
 	@ResponseBody
 	public int updateDtl(SearchDtlWorkListVo param) throws Exception{				

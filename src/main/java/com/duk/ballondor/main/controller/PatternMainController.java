@@ -1,6 +1,6 @@
 /*
  * programID : PatternMainControlloer.java
- * ³»¿ë      : ¸ŞÀÎ ÆäÀÌÁö Conteroller
+ * ë‚´ìš©      : ë©”ì¸ í˜ì´ì§€ Conteroller
  * */
 
 package com.duk.ballondor.main.controller;
@@ -21,20 +21,20 @@ public class PatternMainController {
 	
 	protected final Logger logger = LoggerFactory.getLogger(LoggerInterceptor.class);
 	
-	/* ¸ŞÀÎ */
+	/* ë©”ì¸ */
 	@RequestMapping(value="/patternMainView.do")
 	public ModelAndView mainView(HttpSession session) throws Exception {
 		
 		ModelAndView mav = new ModelAndView();
 		
-		// ¸ŞÀÎ ÆäÀÌÁö·Î ÀÌµ¿
+		// ë©”ì¸ í˜ì´ì§€ë¡œ ì´ë™
 		mav.setViewName("patternMain/patternMainView");
-		logger.debug("¸ŞÀÎ È­¸é ¼¼¼Ç Ã¼Å© : " + String.valueOf(session.getAttribute("userId")));
+		logger.debug("ë©”ì¸ í™”ë©´ ì„¸ì…˜ ì²´í¬ : " + String.valueOf(session.getAttribute("userId")));
 		
 		if(session.getAttribute("userId") != null) {
-			// ·Î±×ÀÎ Á¤º¸°¡ Á¸ÀçÇÒ ½Ã ¸ŞÀÎ È­¸éÀ¸·Î ¸Ş¼¼Áö¸¦ ´øÁ®ÁØ´Ù.
+			// ë¡œê·¸ì¸ ì •ë³´ê°€ ì¡´ì¬í•  ì‹œ ë©”ì¸ í™”ë©´ìœ¼ë¡œ ë©”ì„¸ì§€ë¥¼ ë˜ì ¸ì¤€ë‹¤.
 			
-			// ¸ŞÀÎÀ¸·Î ³Ñ±æ key, data
+			// ë©”ì¸ìœ¼ë¡œ ë„˜ê¸¸ key, data
 			mav.addObject("msg", "success");					
 		}
 		
