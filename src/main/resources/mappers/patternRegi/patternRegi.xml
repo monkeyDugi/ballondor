@@ -12,7 +12,7 @@
 	<!-- popUp select -->  
 	<select id="getWorkList" parameterType="com.duk.ballondor.regi.vo.WorkListVo" resultType="com.duk.ballondor.regi.dto.WorkListDto">
 		SELECT WORK    			    
-		  FROM BALLONDOR.WORK_LIST
+		  FROM ballondor.work_list
 		 WHERE WORK LIKE CONCAT('%', #{ work }, '%')  
 		   AND USER_ID = #{ user_id }		
          ORDER BY WORK
@@ -21,7 +21,7 @@
 		
 	<!-- popUp register -->  
 	<insert id="insertPopWorkRegi" parameterType="com.duk.ballondor.regi.vo.WorkListVo">
-		INSERT INTO BALLONDOR.WORK_LIST
+		INSERT INTO ballondor.work_list
 		(
 		    USER_ID    
 		,   WORK   
@@ -33,7 +33,7 @@
 			  FROM DUAL	
 			 WHERE NOT EXISTS (
 								  SELECT 1
-								    FROM BALLONDOR.WORK_LIST
+								    FROM ballondor.work_list
 								   WHERE WORK    = #{ work }
 								     AND USER_ID = #{ user_id }
 							  )						  	 		 
@@ -41,7 +41,7 @@
 	
 	<!-- register -->  
 	<insert id="insertWorkRegi" parameterType="java.util.List">
-		INSERT INTO BALLONDOR.WORK_LIST_MAIN
+		INSERT INTO ballondor.work_list_main
 		(
 		    USER_ID    
 		,   WORK   

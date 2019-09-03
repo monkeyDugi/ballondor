@@ -37,7 +37,7 @@
     <div id="layer2" class="popLayer">
     	<div class="popTop">
     		<div class="popSearchWrap">	
-    			<input type="text" id="popSearch" placeholder="리스트를 조회 하세요"/>
+    			<input type="text" id="popSearch" placeholder="리스트를 조회 하세요" maxlength="8"/>
     		</div>	
     		<div class="popSearchBtnWrap">
     			<button id="popSearchBtn" class="basicBtn">조회</button>    			
@@ -99,7 +99,7 @@
 		<div>	
 			<div class="content">	
 				<div class="doWorkWrap">
-					<input type="text" name="doWork" class="doWork" placeholder="오늘 한 일을 입력하세요"/>
+					<input type="text" name="doWork" class="doWork" placeholder="오늘 한 일을 입력하세요" maxlength="8"/>
 				</div>
 				<div class="doContentWrap">	
 					<textarea name="doContent" class="doContent" placeholder="상세내용을 최대 100자 내로 입력하세요"></textarea>

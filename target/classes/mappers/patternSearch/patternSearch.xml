@@ -14,7 +14,7 @@
 		SELECT IDX
 		     , WORK 
 		     , REGI_DATE   			    
-		  FROM BALLONDOR.WORK_LIST_MAIN
+		  FROM ballondor.work_list_main
 		 WHERE USER_ID = #{ user_id }		
 		   AND REGI_DATE BETWEEN #{ from_date } AND #{ to_date }
          ORDER BY REGI_DATE DESC
@@ -25,7 +25,7 @@
 	<select id="getBarWorkList" parameterType="com.duk.ballondor.search.vo.SearchWorkListVo" resultType="com.duk.ballondor.search.dto.SearchWorkListDto">
 		SELECT COUNT(WORK) AS RANKING 
 		     , WORK   			    
-		  FROM BALLONDOR.WORK_LIST_MAIN
+		  FROM ballondor.work_list_main
 		 WHERE USER_ID = #{ user_id }		
 		   AND REGI_DATE BETWEEN #{ from_date } AND #{ to_date }
 		 GROUP BY WORK
@@ -38,13 +38,13 @@
 		SELECT WORK
 		     , CONTENT
 		     , REGI_DATE   			    
-		  FROM BALLONDOR.WORK_LIST_MAIN
+		  FROM ballondor.work_list_main
 		 WHERE IDX = #{ idx } 
 	</select>
 		
 	<!-- 상세수정 -->  
 	<delete id="updateDtl" parameterType="com.duk.ballondor.search.vo.SearchDtlWorkListVo">
-		UPDATE BALLONDOR.WORK_LIST_MAIN
+		UPDATE ballondor.work_list_main
 		   SET CONTENT = #{ content }
 		 WHERE IDX = #{ idx }
 		   AND USER_ID = #{ user_id }

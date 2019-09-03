@@ -16,7 +16,8 @@ $(function(){
     	location.href = "/member/signUp.do";	
 	};
 	
-	/* 15자 제한 */
+	/* html에서 maxlength로 바로 처리로 변경 */
+/*	 15자 제한 
 	$("#userId").on('keyup', function() {
 		
 		if( $(this).val().length > 15 ) {
@@ -25,14 +26,14 @@ $(function(){
 		}
 	});	
 	
-	/* 15자 제한 */
+	 15자 제한 
 	$("#userPw").on('keyup', function() {
 		
 		if( $(this).val().length > 15 ) {
 			
 			$(this).val( $(this).val().substring(0, 15) );
 		}
-	});	
+	});	*/
 	
 	/* 로그인 */
 	$.fn.loginFunc = function() {

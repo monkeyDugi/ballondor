@@ -12,7 +12,7 @@
 	<!-- 회원 로그인 체크 -->  
 	<select id="loginCheck" parameterType="com.duk.ballondor.member.vo.MemberVo" resultType="String">
 		SELECT USER_NAME AS userName
-		  FROM BALLONDOR.MEMBERLIST
+		  FROM ballondor.memberlist
 		 WHERE USER_ID = #{userId}
 		   AND USER_PW = #{userPw}
 	</select>
@@ -21,7 +21,7 @@
 	<select id="viewMember" parameterType="com.duk.ballondor.member.vo.MemberVo" resultType="com.duk.ballondor.member.vo.MemberVo">
 		SELECT USER_NAME AS userName
 		     , USER_ID   AS userId
-		  FROM BALLONDOR.MEMBERLIST
+		  FROM ballondor.memberlist
 		 WHERE USER_ID = #{userId}
 		   AND USER_PW = #{userPw}
 	</select>	
@@ -29,13 +29,13 @@
 	<!-- 회원가입ID 중복 체크 -->  
 	<select id="signUpCheck" parameterType="com.duk.ballondor.member.vo.MemberVo" resultType="String">
 		SELECT USER_ID AS userId
-		  FROM BALLONDOR.MEMBERLIST
+		  FROM ballondor.memberlist
 		 WHERE USER_ID = #{userId}		   
 	</select>
 		
 	<!-- 회원가입 insert -->  
 	<insert id="insertMember" parameterType="com.duk.ballondor.member.vo.MemberVo">
-		INSERT INTO BALLONDOR.MEMBERLIST
+		INSERT INTO ballondor.memberlist
 		(
 			USER_ID
 		,	USER_PW

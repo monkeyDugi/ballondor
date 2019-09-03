@@ -37,8 +37,8 @@
 	<div class="middle">
 	<form name="form1" method="post">	
 		<div class="content">	
-			<input type="text" id="userId" name="userId" placeholder="아이디"/>
-			<input type="password" id="userPw" name="userPw" placeholder="비밀번호"/>
+			<input type="text" id="userId" name="userId" placeholder="아이디" maxlength="15"/>
+			<input type="password" id="userPw" name="userPw" placeholder="비밀번호" maxlength="15"/>
 		</div>													
 	</form>	
 	<c:if test="${msg == 'failure'}">

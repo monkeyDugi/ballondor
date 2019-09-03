@@ -9,19 +9,19 @@ $(function(){
 	/*alert(sessionUserId);*/
 	
 	var rowCnt = 1;
-	console.log(rowCnt);
+	//console.log(rowCnt);
 	
-	/* 8자 제한 
+	/* 8자 제한 : html에서 maxleng로 변경함.
 	 * 동적 추가된 태그 이벤트 click이어도 이렇게 해야 함.
 	 * keyup, keydown 등등 같은 경우는 정적이어도 문법이 이렇게 사용하면 됨.
 	 * */	
-	$(document).on("keyup", "input[name='doWork']", function() {
+/*	$(document).on("keyup", "input[name='doWork']", function() {
 		
 		if( $(this).val().length > 8 ) {
 
 			$(this).val( $(this).val().substring(0, 8) );
 		}
-	});
+	});*/
 		
 	$.fn.regiFunc = function() {
 		
@@ -66,8 +66,8 @@ $(function(){
 			var allData = {};
 			
 			allData.workList = list;
-			alert(JSON.stringify(allData));
-			alert(typeof(allData));
+			//alert(JSON.stringify(allData));
+			//alert(typeof(allData));
 			
 	    	$.ajax({
 	    		
@@ -90,7 +90,7 @@ $(function(){
 		//console.log('addRowFunc');	
 		var copy = $('.middle div').html();	
 				
-		console.log(copy);
+		//console.log(copy);
 		
 		$('.middle').append(copy);
 	}
@@ -124,7 +124,7 @@ $(function(){
     	/* 8자 제한 */
     	$('#popSearch').on('keyup', function() {
 
-    		console.log('ddd');
+    		//console.log('ddd');
     		if( $(this).val().length > 8 ) {
 
     			$(this).val( $(this).val().substring(0, 8) );
@@ -218,12 +218,12 @@ $(function(){
     	
     	if(work.length == 0) {
 
-    		alert('리시트를 입력 해주세요');
+    		alert('리스트를 입력 해주세요');
     		return false;
     	}
 
-    	console.log(user_id);
-    	console.log(work);
+    	//console.log(user_id);
+    	//console.log(work);
     	
     	var workListVo = {};
     	workListVo.user_id = user_id;
