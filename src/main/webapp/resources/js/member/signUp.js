@@ -7,6 +7,10 @@
 /* 나중에 session 생각 */
 $(function(){
 	
+	var idChk = false;
+	var nmChk = false;
+	var pwChk = false;
+	var pwChkChk = false;
 	// 최초 로드 시 포커스
 	$('#userId').focus();	
 	
@@ -19,43 +23,67 @@ $(function(){
 	/* 아이디 15자 제한 */
 	$("#userId").on('keyup', function() {
 		
-		if( $(this).val().length > 15 ) {
+		if( $(this).val().length > 15 || $(this).val().length < 4) {
 
-			$(this).val( $(this).val().substring(0, 15) );
+			$(".nomal").text('4자리 이상 ~ 15자리 이하로 입력해주세요');
+			idChk = false;
+		}
+		else {
+			
+			$(".nomal").text('');
+			idChk = true;
 		}
 	});
 	
 	/* 이름 15자 제한 */
 	$("#userName").on('keyup', function() {
 		
-		if( $(this).val().length > 15 ) {
+		if( $(this).val().length > 15 || $(this).val().length < 1 ) {
 			
-			$(this).val( $(this).val().substring(0, 15) );
+			$(".nmNomal").text('1자리 이상 ~ 15자리 이하로 입력해주세요');
+			nmChk = false;
+		}
+		else {
+			
+			$(".nmNomal").text('');
+			nmChk = true;
 		}
 	});	
 	
 	/* 비밀번호 15자 제한 */
 	$("#userPw").on('keyup', function() {
 		
-		if( $(this).val().length > 15 ) {
+		if( $(this).val().length > 15 || $(this).val().length < 8 ) {
 			
-			$(this).val( $(this).val().substring(0, 15) );
+			$(".pwNomal").text('8자리 이상 ~ 15자리 이하로 입력해주세요');
+			pwChk = false;
+		} 
+		else {
+			
+			$(".pwNomal").text('');
+			pwChk = true;
 		}
 	});
 	
-	/* 비밀번호 체크 15자 제한 */
+/*	 비밀번호 체크 15자 제한 */
 	$("#userPwCheck").on('keyup', function() {
 		
-		if( $(this).val().length > 15 ) {
+		if( $(this).val() != $("#userPw").val() ) {
 			
-			$(this).val( $(this).val().substring(0, 15) );
+			$(".pwChkNomal").text('비밀번호가 일치하지 않아요');
+			pwChkChk = false;
+		}
+		else {
+						
+			$(".pwChkNomal").text('');
+			pwChkChk = true;
 		}
 	});	
 	
 	/* 로그인 */
 	$.fn.signUpFunc = function() {
 		
-		var userId = $('#userId').val();		
+/*		var userId = $('#userId').val();		
 		var userName = $('#userName').val();				
 		var userPw = $('#userPw').val();				
 		var userPwCheck = $('#userPwCheck').val();				
@@ -80,7 +108,13 @@ $(function(){
 			alert('비밀번호가 일치하지 않습니다.');
 			$('#userPwCheck').focus();
 			return;
-		}				
+		}*/				
+		
+		if(!idChk || !nmChk || !pwChk || !pwChkChk) {
+			
+			alert('입력항목을 확인해주세요');
+			return;
+		}
 		
 		document.form1.action="/member/signUpCheck.do";
 		document.form1.submit();

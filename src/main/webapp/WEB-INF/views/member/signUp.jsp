@@ -43,15 +43,24 @@
 				<label class="fail">중복되는 아이디 입니다.</label>
 			</div> 
 		</c:if>			
-<%-- 		<c:if test="${msg == null}">
+ 		<c:if test="${msg == null}">
 			<div class="msg"> 
-				<label class="nomal">중복되지 않는 아이디를 입력하세요</label>
+				<label class="nomal"></label>
 			</div> 
-		</c:if>		 --%>		
+		</c:if>		 	
 			<input type="text" id="userName" name="userName" placeholder="이름"/>
+			<div class="msg"> 
+				<label class="nmNomal"></label>
+			</div>
 			<input type="password" id="userPw" name="userPw" placeholder="비밀번호"/>
+			<div class="msg"> 
+				<label class="pwNomal"></label>
+			</div>
 	</form>		
 			<input type="password" id="userPwCheck" placeholder="비밀번호"/>
+			<div class="msg"> 
+				<label class="pwChkNomal"></label>
+			</div>
 		</div>													
 	</div>
 	<div class="footer">

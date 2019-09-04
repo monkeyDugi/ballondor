@@ -1,6 +1,6 @@
 /*
  * programID : lgoin.css
- * ³»¿ë      : ·Î±âÀº ÆäÀÌÁö css
+ * ï¿½ï¿½ï¿½ï¿½      : ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ css
  * */
  
  
@@ -122,7 +122,25 @@ body {
 }
 
 .nomal {	
-	color:black;
+	color:red;
+	/* background:beige; */
+	font-size: 7pt;	
+}
+
+.nmNomal {	
+	color:red;
+	/* background:beige; */
+	font-size: 7pt;	
+}
+
+.pwNomal {	
+	color:red;
+	/* background:beige; */
+	font-size: 7pt;	
+}
+
+.pwChkNomal {	
+	color:red;
 	/* background:beige; */
 	font-size: 7pt;	
 }
