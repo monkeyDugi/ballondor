@@ -37,17 +37,10 @@
 	<div class="middle">
 	<form name="form1" method="post">	
 		<div class="content">	
-			<input type="text" id="userId" name="userId" placeholder="아이디"/>
-		<c:if test="${msg == 'failure'}">
+			<input type="text" id="userId" name="userId" placeholder="아이디"/> 	
 			<div class="msg"> 
-				<label class="fail">중복되는 아이디 입니다.</label>
-			</div> 
-		</c:if>			
- 		<c:if test="${msg == null}">
-			<div class="msg"> 
-				<label class="nomal"></label>
-			</div> 
-		</c:if>		 	
+				<label class="nomal">${msg}</label>
+			</div> 		
 			<input type="text" id="userName" name="userName" placeholder="이름"/>
 			<div class="msg"> 
 				<label class="nmNomal"></label>

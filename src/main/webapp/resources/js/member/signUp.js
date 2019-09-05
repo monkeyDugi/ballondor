@@ -11,6 +11,16 @@ $(function(){
 	var nmChk = false;
 	var pwChk = false;
 	var pwChkChk = false;
+
+	// 회원가입 유효성 체크 정규식
+    var numberPattern = /[0-9]/;          		   // 숫자 
+    var lowuppPattern = /[a-zA-Z]/;       		   // 대소문자
+    var spcialPattern = /[~!@\#$%<>^&*]/; 		   // 특수문자    
+    var utf8Pattern   = /[가-힣]/;        		   // 한글    
+    var spacePattern  = /[\s]/;           		   // 공백       
+    var namePattern   = /^[A-Za-z가-힣]{1,15}$/;  // 이름 체크 정규식
+    var idPattern     = /^[A-Za-z0-9]{4,15}$/;    // 아이디 체크 정규식
+    
 	// 최초 로드 시 포커스
 	$('#userId').focus();	
 	
@@ -23,9 +33,9 @@ $(function(){
 	/* 아이디 15자 제한 */
 	$("#userId").on('keyup', function() {
 		
-		if( $(this).val().length > 15 || $(this).val().length < 4) {
+		if( !idPattern.test($(this).val()) || spacePattern.test($(this).val()) ) {
 
-			$(".nomal").text('4자리 이상 ~ 15자리 이하로 입력해주세요');
+			$(".nomal").text('대소문자, 숫자 4자리 이상 ~ 15자리 이하로 입력해주세요');
 			idChk = false;
 		}
 		else {
@@ -38,9 +48,9 @@ $(function(){
 	/* 이름 15자 제한 */
 	$("#userName").on('keyup', function() {
 		
-		if( $(this).val().length > 15 || $(this).val().length < 1 ) {
+		if( !namePattern.test($(this).val()) || spacePattern.test($(this).val()) ) {
 			
-			$(".nmNomal").text('1자리 이상 ~ 15자리 이하로 입력해주세요');
+			$(".nmNomal").text('한글, 대소문자 1자리 이상 ~ 15자리 이하로 입력해주세요');
 			nmChk = false;
 		}
 		else {
@@ -53,9 +63,10 @@ $(function(){
 	/* 비밀번호 15자 제한 */
 	$("#userPw").on('keyup', function() {
 		
-		if( $(this).val().length > 15 || $(this).val().length < 8 ) {
+		if( $(this).val().length > 15 || $(this).val().length < 8 || !numberPattern.test($(this).val()) || !lowuppPattern.test($(this).val()) 
+			|| !spcialPattern.test($(this).val()) || spacePattern.test($(this).val()) ) {
 			
-			$(".pwNomal").text('8자리 이상 ~ 15자리 이하로 입력해주세요');
+			$(".pwNomal").text('대소문자+숫자+특수문자 8자리 이상 ~ 15자리 이하로 입력해주세요');
 			pwChk = false;
 		} 
 		else {
@@ -80,35 +91,8 @@ $(function(){
 		}
 	});	
 	
-	/* 로그인 */
-	$.fn.signUpFunc = function() {
-		
-/*		var userId = $('#userId').val();		
-		var userName = $('#userName').val();				
-		var userPw = $('#userPw').val();				
-		var userPwCheck = $('#userPwCheck').val();				
-							
-		if(userId == '') {
-			
-			alert('아이디를 입력 해주세요');
-			$('#userId').focus();	
-			return;
-		} else if(userName == '') {
-
-			alert('이름을 입력하세요');
-			$('#userId').focus();
-			return;
-		} else if(userPw == '') {
-			
-			alert('비밀번호를 입력하세요');
-			$('#userPw').focus();
-			return;
-		} else if(userPw != userPwCheck) {
-			
-			alert('비밀번호가 일치하지 않습니다.');
-			$('#userPwCheck').focus();
-			return;
-		}*/				
+	/* 가입하기 */
+	$.fn.signUpFunc = function() {			
 		
 		if(!idChk || !nmChk || !pwChk || !pwChkChk) {
 			

@@ -1,6 +1,8 @@
 /*
  * programID : MemeberControlloer.java
  * 내용      : 로그인 Conteroller
+ * - ModelAndView를 사용해보고 싶어서 ajax 사용 안함. 오히려 회원가입에서 중복체크를 focusout 시 하려면 
+ *   ajax를 비동기 식으로 했으면 어땠을까?
  * */
 
 package com.duk.ballondor.member.controller;
@@ -117,7 +119,7 @@ public class MemberController {
 			// 회원가입 페이지로 이동
 			mav.setViewName("member/signUp");
 			// 메인으로 넘길 key, data
-			mav.addObject("msg", "failure");
+			mav.addObject("msg", "이미 사용 중이에요");
 			// 회원가입 성공
 		} else {
 			
