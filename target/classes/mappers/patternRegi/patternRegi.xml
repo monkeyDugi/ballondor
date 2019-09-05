@@ -15,8 +15,7 @@
 		  FROM ballondor.work_list
 		 WHERE WORK LIKE CONCAT('%', #{ work }, '%')  
 		   AND USER_ID = #{ user_id }		
-         ORDER BY WORK
-                , REGI_DATE  
+         ORDER BY WORK                
 	</select>
 		
 	<!-- popUp register -->  
@@ -24,12 +23,10 @@
 		INSERT INTO ballondor.work_list
 		(
 		    USER_ID    
-		,   WORK   
-		,	REGI_DATE     
+		,   WORK   		  
 		) 	
 			SELECT #{ user_id }
-			     , #{ work }
-			     , NOW() 
+			     , #{ work }			     
 			  FROM DUAL	
 			 WHERE NOT EXISTS (
 								  SELECT 1
