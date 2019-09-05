@@ -29,8 +29,6 @@
 		 WHERE USER_ID = #{ user_id }		
 		   AND REGI_DATE BETWEEN #{ from_date } AND #{ to_date }
 		 GROUP BY WORK
-         ORDER BY REGI_DATE DESC
-                , WORK
 	</select>	
 	
 	<!-- 상세조회 -->  
