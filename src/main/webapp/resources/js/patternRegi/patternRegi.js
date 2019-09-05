@@ -10,18 +10,6 @@ $(function(){
 	
 	var rowCnt = 1;
 	//console.log(rowCnt);
-	
-	/* 8자 제한 : html에서 maxleng로 변경함.
-	 * 동적 추가된 태그 이벤트 click이어도 이렇게 해야 함.
-	 * keyup, keydown 등등 같은 경우는 정적이어도 문법이 이렇게 사용하면 됨.
-	 * */	
-/*	$(document).on("keyup", "input[name='doWork']", function() {
-		
-		if( $(this).val().length > 8 ) {
-
-			$(this).val( $(this).val().substring(0, 8) );
-		}
-	});*/
 		
 	$.fn.regiFunc = function() {
 		
