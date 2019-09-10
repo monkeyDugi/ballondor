@@ -9,5 +9,5 @@ pom.xml
 
 #Spring#
 .springBeans
-spring/
-web.xml
+**/**/spring/
+**/**/web.xml
