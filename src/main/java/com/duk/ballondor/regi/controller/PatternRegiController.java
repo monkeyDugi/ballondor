@@ -10,8 +10,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,16 +17,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.duk.ballondor.common.LoggerInterceptor;
 import com.duk.ballondor.regi.dto.WorkListDto;
 import com.duk.ballondor.regi.service.PatternRegiService;
 import com.duk.ballondor.regi.vo.WorkListVo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
 @RequestMapping(value="/patternRegi")
 public class PatternRegiController {
-	
-	protected final Logger logger = LoggerFactory.getLogger(LoggerInterceptor.class);
 	
 	@Autowired
 	private PatternRegiService patternRegiService;
@@ -68,10 +66,7 @@ public class PatternRegiController {
 		
 		for(WorkListVo vo : param.getWorkList()) {
 			
-			logger.debug("user_id : " + vo.getUser_id());
-			logger.debug("work : " + vo.getWork());
-			logger.debug("content : " + vo.getContent());
-			logger.debug("regiDate : " + vo.getRegiDate());
+			log.debug(vo.toString());
 		}
 		return patternRegiService.insertWorkRegi(param.getWorkList());				
 	}	

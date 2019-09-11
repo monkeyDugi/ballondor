@@ -5,28 +5,27 @@ import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class LoggerInterceptor extends HandlerInterceptorAdapter{
+import lombok.extern.slf4j.Slf4j;
 
-	protected final Logger logger = LoggerFactory.getLogger(LoggerInterceptor.class);
+@Slf4j
+public class LoggerInterceptor extends HandlerInterceptorAdapter{
 	
 	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		
-		logger.debug("=========================================LoggerInterceptor START =========================================");
-		logger.debug("URL [{}]," + request.getRequestURI());
+		log.debug("=========================================LoggerInterceptor START =========================================");
+		log.debug("URL [{}]," + request.getRequestURI());
 		
 		Enumeration paramNames = request.getParameterNames();
 		while(paramNames.hasMoreElements()) {
 			
 			String key   = (String)paramNames.nextElement();
 			String value = request.getParameter(key); 
-			logger.debug("RequestParameter Data => " + key + " : " + value + "");
+			log.debug("RequestParameter Data => " + key + " : " + value + "");
 		}
 		
 		return super.preHandle(request, response, handler);
@@ -35,6 +34,6 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter{
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 	
-		logger.debug("=========================================LoggerInterceptor END =========================================");
+		log.debug("=========================================LoggerInterceptor END =========================================");
 	}
 }

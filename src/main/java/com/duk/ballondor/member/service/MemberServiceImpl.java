@@ -8,18 +8,17 @@ package com.duk.ballondor.member.service;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.duk.ballondor.common.LoggerInterceptor;
 import com.duk.ballondor.member.dao.MemberDao;
 import com.duk.ballondor.member.vo.MemberVo;
 
-@Service
-public class MemberServiceImpl implements MemberService {
+import lombok.extern.slf4j.Slf4j;
 
-	protected final Logger logger = LoggerFactory.getLogger(LoggerInterceptor.class);
+
+@Service
+@Slf4j
+public class MemberServiceImpl implements MemberService {
 	
 	@Inject
 	MemberDao memberDao;
@@ -38,8 +37,8 @@ public class MemberServiceImpl implements MemberService {
 			session.setAttribute("userId", vo2.getUserId());
 			session.setAttribute("userName", vo2.getUserName());
 			
-			logger.debug("session userId : " + vo2.getUserId());
-			logger.debug("session userName : " + vo2.getUserName());
+			log.debug("session userId : " + vo2.getUserId());
+			log.debug("session userName : " + vo2.getUserName());
 		}
 		return result;
 	}

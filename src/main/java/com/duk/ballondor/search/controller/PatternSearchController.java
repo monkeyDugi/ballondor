@@ -10,25 +10,23 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.duk.ballondor.common.LoggerInterceptor;
 import com.duk.ballondor.search.dto.SearchDtlWorkListDto;
 import com.duk.ballondor.search.dto.SearchWorkListDto;
 import com.duk.ballondor.search.service.PatternSearchService;
 import com.duk.ballondor.search.vo.SearchDtlWorkListVo;
 import com.duk.ballondor.search.vo.SearchWorkListVo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
 @RequestMapping(value="/patternSearch")
 public class PatternSearchController {
-	
-	protected final Logger logger = LoggerFactory.getLogger(LoggerInterceptor.class);
 	
 	@Autowired
 	private PatternSearchService patternSearchService;
@@ -50,9 +48,9 @@ public class PatternSearchController {
 	@ResponseBody
 	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) throws Exception{				
 				
-/*		logger.debug(param.getFrom_date());
-		logger.debug(param.getTo_date());
-		logger.debug(param.getUser_id());*/
+		//log.debug(param.getFrom_date());
+		//log.debug(param.getTo_date());
+		//log.debug(param.getUser_id());
 		List<SearchWorkListDto> workList = patternSearchService.getWorkList(param);		
 		return workList;
 	}
@@ -62,9 +60,9 @@ public class PatternSearchController {
 	@ResponseBody
 	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) throws Exception{				
 		
-		/*		logger.debug(param.getFrom_date());
-		logger.debug(param.getTo_date());
-		logger.debug(param.getUser_id());*/
+		//log.debug(param.getFrom_date());
+		//log.debug(param.getTo_date());
+		//log.debug(param.getUser_id());
 		List<SearchWorkListDto> workBarList = patternSearchService.getBarWorkList(param);		
 		return workBarList;
 	}	
@@ -74,7 +72,7 @@ public class PatternSearchController {
 	@ResponseBody
 	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception{				
 				
-		logger.debug("idx : " + param.getIdx());
+		log.debug("idx : " + param.getIdx());
 		
 		List<SearchDtlWorkListDto> dtlWorkList = patternSearchService.getDtlWorkList(param);		
 		return dtlWorkList;

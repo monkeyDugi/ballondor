@@ -10,22 +10,20 @@ package com.duk.ballondor.member.controller;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.duk.ballondor.common.LoggerInterceptor;
 import com.duk.ballondor.member.service.MemberService;
 import com.duk.ballondor.member.vo.MemberVo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
 @RequestMapping(value="/member")
 public class MemberController {
-	
-	protected final Logger logger = LoggerFactory.getLogger(LoggerInterceptor.class);
 	
 	@Inject
 	MemberService memberService;
@@ -41,16 +39,17 @@ public class MemberController {
 	// - 서비스에서 성공 시 세션에 아이디와 이름 등록.
 	@RequestMapping(value="/loginCheck.do")
 	public ModelAndView loginCheck(@ModelAttribute MemberVo vo, HttpSession session) {
-		
+	
 		vo.setUserId(vo.getUserId().trim());
 		vo.setUserPw(vo.getUserPw().trim());
 		
-		logger.debug("getUserId: " + vo.getUserId());
-		logger.debug("getUserPw: " + vo.getUserPw());
-		
+		log.debug("================================== 로그인 정보 Start ==================================");
+		log.debug(vo.toString());
+
 		boolean result = memberService.loginCheck(vo, session);
 		
-		logger.debug("로그인 결과  : " + String.valueOf(result));
+		log.debug("로그인 결과  : " + String.valueOf(result));
+		log.debug("================================== 로그인 정보 End==================================");
 		
 		ModelAndView mav = new ModelAndView();
 		
@@ -103,13 +102,13 @@ public class MemberController {
 		vo.setUserName(vo.getUserName().trim());
 		vo.setUserPw(vo.getUserPw().trim());
 		
-		logger.debug("getUserId: " + vo.getUserId());
-		logger.debug("getUserName: " + vo.getUserName());
-		logger.debug("getUserPw: " + vo.getUserPw());
+		log.debug("================================== 회원가입 정보 Start ==================================");
+		log.debug(vo.toString());
 		
 		boolean result = memberService.signUpCheck(vo, session);
-		
-		logger.debug("회원가입 결과 : " + String.valueOf(result));
+				
+		log.debug("회원가입 결과 : " + String.valueOf(result));
+		log.debug("================================== 회원가입 정보 End==================================");
 		
 		ModelAndView mav = new ModelAndView();
 		

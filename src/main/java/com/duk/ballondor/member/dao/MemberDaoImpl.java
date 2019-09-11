@@ -1,7 +1,6 @@
 package com.duk.ballondor.member.dao;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -28,12 +27,6 @@ public class MemberDaoImpl implements MemberDao {
 	public MemberVo viewMember(MemberVo vo) {
 		
 		return sqlSession.selectOne(NAMESPACE + "viewMember", vo);
-	}
-
-	@Override
-	public void logout(HttpSession session) {
-		// TODO Auto-generated method stub
-
 	}
 	
 	// 01_01. 회원가입ID 중복 체크
