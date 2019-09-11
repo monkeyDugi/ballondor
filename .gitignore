@@ -2,7 +2,6 @@
 
 #Maven#
 target/
-pom.xml
 
 #Eclipse#
 .classpath
@@ -11,5 +10,4 @@ pom.xml
 
 #Spring#
 .springBeans
-**/**/spring/
-**/**/web.xml
+**/**/spring/root-context.xml
