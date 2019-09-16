@@ -33,20 +33,20 @@ public class PatternSearchController {
 	
 	/* 조회 화면*/
 	@RequestMapping(value="/patternSearchView.do")
-	public String search(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public String search(HttpServletRequest request, HttpServletResponse response) {
 			return "patternSearch/patternSearchView";		
 	}
 	
 	/* 상세보기 화면 이동*/
 	@RequestMapping(value="/patternSearchDtlView.do")
-	public String searchDtl(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public String searchDtl(HttpServletRequest request, HttpServletResponse response) {
 		return "patternSearch/patternSearchDtlView";		
 	}		
 	
 	/* 조회 */
 	@RequestMapping(value="/selectWorkSearch.do")
 	@ResponseBody
-	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) throws Exception{				
+	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) {				
 				
 		//log.debug(param.getFrom_date());
 		//log.debug(param.getTo_date());
@@ -58,7 +58,7 @@ public class PatternSearchController {
 	/* 그래프 조회 */
 	@RequestMapping(value="/selectBarWorkSearch.do")
 	@ResponseBody
-	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) throws Exception{				
+	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) {				
 		
 		//log.debug(param.getFrom_date());
 		//log.debug(param.getTo_date());
@@ -70,7 +70,7 @@ public class PatternSearchController {
 	/* 상세화면 최초 조회 */
 	@RequestMapping(value="/selectDtlWorkSearch.do")
 	@ResponseBody
-	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception{				
+	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) {				
 				
 		log.debug("idx : " + param.getIdx());
 		
@@ -81,7 +81,7 @@ public class PatternSearchController {
 	/* 상세 수정 */
 	@RequestMapping(value="/updateDtl.do")
 	@ResponseBody
-	public int updateDtl(SearchDtlWorkListVo param) throws Exception{				
+	public int updateDtl(SearchDtlWorkListVo param) {				
 		
 		return patternSearchService.updateDtl(param);				
 	}	

@@ -21,19 +21,19 @@ public class PatternRegiService {
 	private PatternRegiDao patternRegiDao;
 	
 	/* popUp select */
-	public List<WorkListDto> getWorkList(WorkListVo param) throws Exception {
+	public List<WorkListDto> getWorkList(WorkListVo param) {
 		
 		return patternRegiDao.getWorkList(param);
 	}
 	
 	/* popUp register */	
-	public int insertPopWorkRegi (WorkListVo param) throws Exception {
+	public int insertPopWorkRegi (WorkListVo param) {
 		
 		return patternRegiDao.insertPopWorkRegi(param);
 	}	
 	
 	/* register */	
-	public int insertWorkRegi (List<WorkListVo> param) throws Exception {
+	public int insertWorkRegi (List<WorkListVo> param) {
 		
 		return patternRegiDao.insertWorkRegi(param);
 	}	

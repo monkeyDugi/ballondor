@@ -27,25 +27,25 @@ public class PatternSearchDao {
 	private static final String NAMESPACE = "com.duk.ballondor.search.searchMapper.";
 	
 	/* 조회 */
-	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) throws Exception {
+	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) {
 		
 		return sqlSession.selectList(NAMESPACE + "getWorkList", param);
 	}
 	
 	/* 그래프 조회 */
-	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) throws Exception {
+	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) {
 		
 		return sqlSession.selectList(NAMESPACE + "getBarWorkList", param);
 	}
 
 	/* 상세조회 */
-	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception {
+	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) {
 		
 		return sqlSession.selectList(NAMESPACE + "getDtlWorkList", param);
 	}
 	
 	/* 상세수정 */
-	public int updateDtl(SearchDtlWorkListVo param) throws Exception {
+	public int updateDtl(SearchDtlWorkListVo param) {
 		
 		return sqlSession.update(NAMESPACE + "updateDtl", param);
 	}	

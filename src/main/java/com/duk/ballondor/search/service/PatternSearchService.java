@@ -23,25 +23,25 @@ public class PatternSearchService {
 	private PatternSearchDao patternSearchDao;
 	
 	/* 조회 */
-	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) throws Exception {
+	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) {
 		
 		return patternSearchDao.getWorkList(param);
 	}
 	
 	/* 그래프 조회 */
-	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) throws Exception {
+	public List<SearchWorkListDto> getBarWorkList(SearchWorkListVo param) {
 		
 		return patternSearchDao.getBarWorkList(param);
 	}
 	
 	/* 상세조회 */
-	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) throws Exception {
+	public List<SearchDtlWorkListDto> getDtlWorkList(SearchDtlWorkListVo param) {
 		
 		return patternSearchDao.getDtlWorkList(param);
 	}
 	
 	/* 상세수정 */
-	public int updateDtl(SearchDtlWorkListVo param) throws Exception {
+	public int updateDtl(SearchDtlWorkListVo param) {
 		
 		return patternSearchDao.updateDtl(param);
 	}	

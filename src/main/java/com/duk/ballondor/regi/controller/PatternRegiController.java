@@ -32,14 +32,14 @@ public class PatternRegiController {
 	private PatternRegiService patternRegiService;
 	
 	@RequestMapping(value="/patternRegiView.do")
-	public String register(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public String register(HttpServletRequest request, HttpServletResponse response) {
 				return "patternRegi/patternRegiView";		
 	}	
 	
 	/* popUp select */
 	@RequestMapping(value="/getPopWorkList.do")
 	@ResponseBody
-	public List<WorkListDto> getPopWorkList(WorkListVo param) throws Exception{				
+	public List<WorkListDto> getPopWorkList(WorkListVo param) {				
 				
 		List<WorkListDto> workList = patternRegiService.getWorkList(param);		
 		return workList;
@@ -48,7 +48,7 @@ public class PatternRegiController {
 	/* popUp register */
 	@RequestMapping(value="/insertPopWorkRegi.do")
 	@ResponseBody
-	public int insertPopWorkRegi(WorkListVo param) throws Exception{				
+	public int insertPopWorkRegi(WorkListVo param) {				
 				
 		return patternRegiService.insertPopWorkRegi(param);				
 	}
@@ -62,7 +62,7 @@ public class PatternRegiController {
 	/* register */
 	@RequestMapping(value="/insertWorkRegi.do", method=RequestMethod.POST)
 	@ResponseBody
-	public int insertWorkRegi(@RequestBody WorkListVo param) throws Exception{				
+	public int insertWorkRegi(@RequestBody WorkListVo param) {				
 		
 		for(WorkListVo vo : param.getWorkList()) {
 			

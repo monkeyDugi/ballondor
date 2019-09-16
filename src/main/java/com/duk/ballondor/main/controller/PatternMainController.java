@@ -20,7 +20,7 @@ public class PatternMainController {
 	
 	/* 메인 */
 	@RequestMapping(value="/patternMainView.do")
-	public ModelAndView mainView(HttpSession session) throws Exception {
+	public ModelAndView mainView(HttpSession session) {
 		
 		ModelAndView mav = new ModelAndView();
 		

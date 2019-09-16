@@ -25,19 +25,19 @@ public class PatternRegiDao {
 	private static final String NAMESPACE = "com.duk.ballondor.regi.regiMapper.";
 	
 	/* popUp select */
-	public List<WorkListDto> getWorkList(WorkListVo param) throws Exception {
+	public List<WorkListDto> getWorkList(WorkListVo param) {
 		
 		return sqlSession.selectList(NAMESPACE + "getWorkList", param);
 	}
 	
 	/* popUp register */
-	public int insertPopWorkRegi (WorkListVo param) throws Exception {
+	public int insertPopWorkRegi (WorkListVo param) {
 		
 		return sqlSession.insert(NAMESPACE + "insertPopWorkRegi", param);
 	}	
 	
 	/* register */
-	public int insertWorkRegi (List<WorkListVo> param) throws Exception {
+	public int insertWorkRegi (List<WorkListVo> param) {
 		
 		return sqlSession.insert(NAMESPACE + "insertWorkRegi", param);
 	}	
