@@ -24,7 +24,7 @@ public class PatternSearchDao {
 	@Resource(name="sqlSession")
 	private SqlSession sqlSession;
 	
-	private static final String NAMESPACE = "com.duk.ballondor.search.searchMapper.";
+	private final String NAMESPACE = "com.duk.ballondor.search.searchMapper.";
 	
 	/* 조회 */
 	public List<SearchWorkListDto> getWorkList(SearchWorkListVo param) {

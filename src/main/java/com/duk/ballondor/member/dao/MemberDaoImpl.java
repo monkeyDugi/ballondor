@@ -13,7 +13,7 @@ public class MemberDaoImpl implements MemberDao {
 	@Inject
 	SqlSession sqlSession;
 	
-	private static final String NAMESPACE = "com.duk.ballondor.member.memberMapper.";
+	private final String NAMESPACE = "com.duk.ballondor.member.memberMapper.";
 	
 	// 01_01. 회원 로그인 체크
 	@Override

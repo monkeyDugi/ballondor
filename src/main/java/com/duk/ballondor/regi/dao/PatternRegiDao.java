@@ -22,7 +22,7 @@ public class PatternRegiDao {
 	@Resource(name="sqlSession")
 	private SqlSession sqlSession;
 	
-	private static final String NAMESPACE = "com.duk.ballondor.regi.regiMapper.";
+	private final String NAMESPACE = "com.duk.ballondor.regi.regiMapper.";
 	
 	/* popUp select */
 	public List<WorkListDto> getWorkList(WorkListVo param) {
