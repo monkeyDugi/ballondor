@@ -24,4 +24,4 @@
   
 5.상단바 클릭 시 메인 화면으로 이동
 
-------- Git Eclipse Connection Test -------
+
