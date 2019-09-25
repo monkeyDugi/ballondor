@@ -50,13 +50,6 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.viewMember(vo);
 	}
 	
-	// 02. 회원 로그아웃
-	@Override
-	public void logout(HttpSession session) {
-		
-		// 세션 정보 초기화
-		session.invalidate();
-	}
 	
 	// 01_01. 회원가입ID 중복 체크
 	@Override

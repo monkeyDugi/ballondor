@@ -16,9 +16,6 @@ public interface MemberService {
 	
 	// 01_02. 회원 로그인 정보
 	public MemberVo viewMember(MemberVo vo);
-	
-	// 02. 회원 로그아웃
-	public void logout(HttpSession session);
 
 	// 01_01. 회원가입 ID 중복 체크
 	public boolean signUpCheck(MemberVo vo, HttpSession session);

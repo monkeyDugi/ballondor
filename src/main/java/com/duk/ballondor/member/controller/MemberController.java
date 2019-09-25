@@ -75,13 +75,12 @@ public class MemberController {
 	@RequestMapping(value="logout.do")
 	public ModelAndView logout(HttpSession session) {
 		
-		memberService.logout(session);
+		session.invalidate();
 		
 		ModelAndView mav = new ModelAndView();
 		
 		// 메인 페이지로 이동
 		mav.setViewName("patternMain/patternMainView");
-		/*mav.addObject("msg", "logout");*/
 		
 		return mav;
 	}
