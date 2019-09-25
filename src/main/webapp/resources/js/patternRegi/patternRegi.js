@@ -62,7 +62,7 @@ $(function(){
 	    		type: "POST"
 	    	,	url: "/patternRegi/insertWorkRegi.do"	
 	    	,	dataType: "JSON"    	
-	    	,	data: JSON.stringify(allData)		
+	    	,	data: allData
 	    	,	contentType: "application/json"
 	    	,	success: function() {    			    		
 	    			alert('등록 완료');
