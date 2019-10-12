@@ -28,13 +28,13 @@
 
 <h1>버전</h1>
 1. java : 1.8<br/>
-2. spring :4.3.6 RELEASE
-3. logback : 1.1
-4. mysql-connector : 5.1
- , DB : msyql : 5.7
-5. mybatis : 3.4
-6. jackson : 2.9
-7. lombok : 1.16
-8. tomcat : 8.5
-9. maven : 3.6
-10. 서버 : AWS EC2(ubuntu)
+2. spring :4.3.6 RELEASE<br/>
+3. logback : 1.1<br/>
+4. mysql-connector : 5.1<br/>
+ , DB : msyql : 5.7<br/>
+5. mybatis : 3.4<br/>
+6. jackson : 2.9<br/>
+7. lombok : 1.16<br/>
+8. tomcat : 8.5<br/>
+9. maven : 3.6<br/>
+10. 서버 : AWS EC2(ubuntu)<br/>
