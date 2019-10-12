@@ -27,7 +27,7 @@
 
 
 <h1>버전</h1>
-1. java : 1.8
+1. java : 1.8<br/>
 2. spring :4.3.6 RELEASE
 3. logback : 1.1
 4. mysql-connector : 5.1
